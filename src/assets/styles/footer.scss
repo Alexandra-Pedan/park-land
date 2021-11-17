@@ -18,6 +18,14 @@ footer {
       text-transform: uppercase;
       color: #f0f0f0;
       text-decoration: none;
+      transition: $transition-fuction;
+    }
+    &:hover {
+      @include from(992px) {
+        a {
+          color: $green;
+        }
+      }
     }
   }
 }
@@ -118,6 +126,13 @@ footer {
   padding: 143px 100px 143px 60px;
   li {
     margin-bottom: 40px;
+    &:hover {
+      @include from(992px) {
+        a {
+          color: $green;
+        }
+      }
+    }
     .title {
       font-size: 16px;
       line-height: 140%;
@@ -135,6 +150,7 @@ footer {
       font-size: 24px;
       line-height: 130%;
       color: #f0f0f0;
+      transition: $transition-fuction;
     }
     p {
       font-weight: 500;
@@ -200,6 +216,9 @@ footer {
 }
 .footer-rights-reserved {
   display: flex;
+  width: 100%;
+  padding: 50px 100px 0 100px;
+  justify-content: space-between;
   .footer-rights {
     font-size: 13px;
     line-height: 140%;
@@ -211,5 +230,10 @@ footer {
     line-height: 140%;
     color: #c7c7c7;
     text-align: center;
+    width: 534px;
+  }
+  .icon--smarto {
+    width: 78px;
+    height: 84px;
   }
 }
