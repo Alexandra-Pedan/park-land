@@ -1,16 +1,35 @@
-header.header-js#header
-  a(href='index.html')
-    +svg('logo')
-  .header-nav
-    a(href='tel:+380505008584').header-tel 
-      span + 38 (050) 500-85-84
+header.header.header-js#header
+  .logo
+    a(href='index.html').logo__link
+      +svg('logo').logo__img
+  .nav
+    a(href='tel:+380505008584').nav__tel-link
+      span.nav__tel-text + 38 (050) 500-85-84
     include ../components/lang/lang.pug
-    button(type='button').header-call.js-call
-      span замовити дзвінок
-    a(href='#').realty
-      span обрати нерухомість
-    .header-menu.js-menu-open
-      span меню
-      .button--skoll 
-        +svg('menu')
- 
+    button(type='button').nav__call-btn.js-call
+      span.nav__call-btn-text замовити дзвінок
+    
+    a(href='#').realty__link
+      span.realty__text обрати нерухомість
+    .menu.js-menu-open
+      span.menu__text меню
+      .menu__btn
+        +svg('menu').menu__img
+
+
+//- header.header-js#header
+//-   a(href='index.html').logo
+//-     +svg('logo')
+//-   .header-nav
+//-     a(href='tel:+380505008584').header-tel 
+//-       span + 38 (050) 500-85-84
+//-     include ../components/lang/lang.pug
+//-     button(type='button').header-call.js-call
+//-       span замовити дзвінок
+//-     a(href='#').realty
+//-       span обрати нерухомість
+//-     .header-menu.js-menu-open
+//-       span меню
+//-       .button--skoll 
+//-         +svg('menu')
+

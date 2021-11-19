@@ -7,7 +7,8 @@ footer {
 
 .footer-navigation {
   display: flex;
-  padding: 50px 100px;
+  // padding: 50px 100px;
+  padding: 50px vw(100, 1920);
   border-bottom: 1px solid #464646;
   li {
     margin-right: 60px;
@@ -19,10 +20,8 @@ footer {
       color: #f0f0f0;
       text-decoration: none;
       transition: $transition-fuction;
-    }
-    &:hover {
-      @include from(992px) {
-        a {
+      &:hover {
+        @include from(992px) {
           color: $green;
         }
       }
@@ -40,7 +39,8 @@ footer {
   width: 31%;
 }
 .footer-form {
-  padding: 143px 100px;
+  // padding: 143px 100px;
+  padding: 143px vw(100, 1920);
   border-right: 1px solid #464646;
   width: 69%;
   h3 {
@@ -217,7 +217,8 @@ footer {
 .footer-rights-reserved {
   display: flex;
   width: 100%;
-  padding: 50px 100px 0 100px;
+  // padding: 50px 100px 0 100px;
+  padding: 50px vw(100, 1920) 0 vw(100, 1920);
   justify-content: space-between;
   .footer-rights {
     font-size: 13px;

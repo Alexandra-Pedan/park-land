@@ -1,0 +1,37 @@
+
+extends ../layout/main
+block variable
+block meta
+  title= 'Documents'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+block content
+   section.documents-content 
+    .documents-sticker
+      h5 documents
+    h1.documents-title Документи
+    ul.documents-content-list
+      li
+        a(href="#").documents-link
+          .date 
+            +svg('clock')
+            p 30.11.2021
+          .description 
+            p Декларація про початок будівельних робіт у жк від 20.12.2018
+          .image 
+            +svg('download')
+
+
+block header
+  include ../includes/header.pug
+block footer
+  include ../includes/footer.pug
+
+
+

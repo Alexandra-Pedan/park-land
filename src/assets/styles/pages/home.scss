@@ -15,7 +15,8 @@
       height: 42%;
       display: flex;
       justify-content: space-between;
-      padding: 80px 100px;
+      align-items: center;
+      padding: 80px vw(100, 1920);
       .title {
         font-weight: normal;
         font-size: 110px;
@@ -25,7 +26,7 @@
         width: 258px;
       }
       .choose-realty {
-        width: 290px;
+        width: 48%;
         display: flex;
         flex-direction: column;
         p {
@@ -92,7 +93,8 @@
 .advantage-content {
   width: 100%;
   height: auto;
-  padding: 150px 100px 90px 397px;
+  // padding: 150px 100px 90px 397px;
+  padding: vw(150, 1920) vw(100, 1920) vw(90, 1920) vw(397, 1920);
   background: #f0f0f0;
   position: relative;
   .advantage-sticker {
@@ -127,6 +129,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    margin-left: -30px;
   }
   &-list :nth-child(2),
   :nth-child(3),
@@ -146,13 +149,15 @@
       width: 100%;
       height: 530px;
     }
-    p {
+    .description {
       font-weight: normal;
       font-size: 24px;
       line-height: 130%;
       color: #435055;
       margin-top: 20px;
       width: 480px;
+      // padding-right: 250px;
+      // width: 100%;
     }
   }
 }
@@ -160,7 +165,8 @@
 .about-us-content {
   width: 100%;
   height: 1440px;
-  padding: 150px 100px 150px 397px;
+  // padding: 150px 100px 150px 397px;
+  padding: vw(150, 1920) vw(100, 1920) vw(150, 1920) vw(397, 1920);
   background-image: url('../images/main-bgr.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -226,7 +232,8 @@
 
 .developer-content {
   width: 100%;
-  padding: 150px 0 0 397px;
+  // padding: 150px 0 0 397px;
+  padding: vw(150, 1920) 0 0 vw(397, 1920);
   background: #ffffff;
   position: relative;
   display: flex;
@@ -308,7 +315,8 @@
 .news-content {
   width: 100%;
   // height: 1440px;
-  padding: 150px 0 150px 397px;
+  // padding: 150px 0 150px 397px;
+  padding: vw(150, 1920) vw(100, 1920) vw(150, 1920) vw(397, 1920);
   background: #2d2d2d;
   position: relative;
   .news-sticker {
@@ -368,22 +376,25 @@
 
   .swiper-slide {
     font-size: 18px;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+    // display: flex;
+    // -webkit-box-pack: center;
+    // -ms-flex-pack: center;
+    // -webkit-justify-content: center;
+    // justify-content: center;
+    // -webkit-box-align: center;
+    // -ms-flex-align: center;
+    // -webkit-align-items: center;
+    // align-items: center;
     a {
       text-decoration: none;
     }
     .swiper-slide-img {
       overflow: hidden;
       width: 100%;
-      height: 300px;
+      height: 400px;
+      @include to(1920px) {
+        height: 300px;
+      }
       img {
         transition: all 0.5s ease;
         // transform: scale(1);
@@ -484,7 +495,8 @@
 .gallery-content {
   width: 100%;
   // height: 1440px;
-  padding: 150px 0 150px 397px;
+  // padding: 150px 0 150px 397px;
+  padding: vw(150, 1920) vw(100, 1920) vw(150, 1920) vw(397, 1920);
   background: #f0f0f0;
   position: relative;
   .gallery-sticker {
@@ -544,21 +556,24 @@
 
     .swiper-slide {
       font-size: 18px;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
+      // display: flex;
+      // -webkit-box-pack: center;
+      // -ms-flex-pack: center;
+      // -webkit-justify-content: center;
+      // justify-content: center;
+      // -webkit-box-align: center;
+      // -ms-flex-align: center;
+      // -webkit-align-items: center;
+      // align-items: center;
 
       .swiper-slide-img {
         cursor: pointer;
         overflow: hidden;
         // width: 100%;
-        height: 650px;
+        height: 750px;
+        @include to(1920px) {
+          height: 650px;
+        }
         img {
           transition: all 0.5s ease;
           // transform: scale(1);
@@ -599,7 +614,10 @@
       .swiper-slide-img {
         border-radius: 100px 0 100px 0;
         width: 100%;
-        height: 650px;
+        height: 750px;
+        @include to(1920px) {
+          height: 650px;
+        }
       }
     }
   }

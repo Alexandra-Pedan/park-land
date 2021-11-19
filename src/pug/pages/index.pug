@@ -1,4 +1,3 @@
-
 extends ../layout/main
 block variable
 block meta
@@ -11,7 +10,6 @@ block scripts
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/header.js')
-  script(defer src='./assets/scripts/menu.js')
   script(defer src='./assets/scripts/home.js')
 block content
   section.main-content 
@@ -34,35 +32,35 @@ block content
       li.advantage-content-item
         div
           img(src="./assets/images/benefits1.jpg", alt="")
-          p Закритий внутрішній парк
+          p.description Закритий внутрішній парк
       li.advantage-content-item
         div
           img(src="./assets/images/benefits2.jpg", alt="")
-          p Панорамні вікна Salamander
+          p.description Панорамні вікна Salamander
       li.advantage-content-item
         div
           img(src="./assets/images/benefits3.jpg", alt="")
-          p Під'їзди, оздоблені під супроводом дизайнера
+          p.description Під'їзди, оздоблені під супроводом дизайнера
       li.advantage-content-item
         div
           img(src="./assets/images/benefits4.jpg", alt="")
-          p Міжквартирна шумоізоляція і утеплення фасаду за допомогою мінеральної вати
+          p.description Міжквартирна шумоізоляція і утеплення фасаду за допомогою мінеральної вати
       li.advantage-content-item
         div
           img(src="./assets/images/benefits5.jpg", alt="")
-          p Продумана архітектура фасаду
+          p.description Продумана архітектура фасаду
       li.advantage-content-item
         div
           img(src="./assets/images/benefits6.jpg", alt="")
-          p Наземний паркінг та гаражі
+          p.description Наземний паркінг та гаражі
       li.advantage-content-item
         div
           img(src="./assets/images/benefits7.jpg", alt="")
-          p Приміщення для зберігання дитячих візочків та окремо велосипедів
+          p.description Приміщення для зберігання дитячих візочків та окремо велосипедів
       li.advantage-content-item
         div
           img(src="./assets/images/benefits8.jpg", alt="")
-          p Опалення, яке включає теплу підлогу, котел, гребінку на теплу підлогу, бойлер
+          p.description Опалення, яке включає теплу підлогу, котел, гребінку на теплу підлогу, бойлер
 
   section.about-us-content
     .about-us-sticker
@@ -181,6 +179,9 @@ block content
         .swiper-slide.vertical
           .swiper-slide-img
             img(src="./assets/images/benefits2.jpg", alt="")
+        .swiper-slide
+          .swiper-slide-img
+            img(src="./assets/images/main-gallery3.jpg", alt="")
 
 
 
