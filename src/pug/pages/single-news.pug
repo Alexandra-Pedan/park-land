@@ -1,0 +1,41 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Будівництво ЖК Парк Ленд розпочато у 2 кварталі 2018 року'
+    var id_page = 'page-single-news'
+    var class_page = 'page-single-news'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      {
+        label: 'новини та акції',
+        link: pagesLink[0].news
+      }
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+block content
+  //- include ../includes/breadcrumbs.pug
+  section.documents-content.single-news
+    include ../includes/breadcrumbs.pug
+    .documents-sticker
+      h5 30.11.2021
+    .single-container 
+      .single-container__title 
+        h1 
+   
+block header
+  include ../includes/header.pug
+block footer
+  include ../includes/footer.pug
+
+
+

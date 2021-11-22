@@ -179,6 +179,7 @@ footer {
     height: 65px;
     overflow: hidden;
     background: $green;
+    background: transparent;
     position: relative;
     display: inline-block;
     border-radius: 50%;
@@ -197,6 +198,9 @@ footer {
       position: absolute;
       top: 0;
       left: 0;
+    }
+    &:hover {
+      background-color: #679836;
     }
     &:hover::before {
       transform: translate3d(0, 100%, 0);

@@ -165,11 +165,12 @@
   white-space: nowrap;
   color: #ffffff;
   overflow: hidden;
-  background: #679836;
+  background: $black;
   position: relative;
   display: inline-block;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-right: 70px;
   .realty__text {
     position: relative;
@@ -182,7 +183,7 @@
     padding-bottom: 100%;
     border-radius: 12%;
     transform: translate3d(0, 0, 0);
-    transition: transform 0.3s;
+    transition: transform 0.4s;
     transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
     position: absolute;
     top: 0;

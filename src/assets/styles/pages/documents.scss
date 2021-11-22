@@ -1,11 +1,10 @@
 .documents-content {
   position: relative;
-  margin-top: var(--header-h);
-  padding: 100px 397px;
+  padding: 0 vw(397, 1920) 100px vw(397, 1920);
   .documents-sticker {
     position: absolute;
     left: 0;
-    top: 100px;
+    top: 0;
     width: 270px;
     height: 65px;
     background: $black;
@@ -38,6 +37,12 @@
     justify-content: space-between;
     border-top: 1px solid #cbd2c5;
     padding: 30px 0 60px 0;
+    transition: $transition-fuction;
+    &:hover {
+      @include from(992px) {
+        border-top: 1px solid $green;
+      }
+    }
     .date {
       display: flex;
       .icon--clock {
@@ -46,6 +51,7 @@
         stroke: #435055;
         fill: none;
         margin-right: 10px;
+        margin-top: 6px;
       }
       p {
         font-size: 18px;
@@ -68,7 +74,25 @@
       height: 65px;
       border-radius: 50%;
       position: relative;
-      background: $green;
+      background: $black;
+      overflow: hidden;
+      &::before {
+        content: '';
+        background: $green;
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+        border-radius: 50%;
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.3s;
+        transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      &:hover::before {
+        transform: translate3d(0, 100%, 0);
+      }
       .icon--download {
         width: 15px;
         height: 21px;

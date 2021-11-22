@@ -1,0 +1,124 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'новини та акції'
+    var id_page = 'page-news'
+    var class_page = 'page-news'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+block content
+  include ../includes/breadcrumbs.pug
+  section.documents-content
+    .documents-sticker
+      h5 News & offers
+    h1.documents-title новини та акції
+    .filter
+      .select
+        .select__year
+          .select__year--selected 2021
+          //- ul.select__year--list
+          //-   li.select__year--item 2020
+          //-   li.select__year--item 2019
+          //-   li.select__year--item 2018
+        .select__month
+          .select__month--selected Вересень
+          //- ul.select__month--list 
+          //-   li.select__month--item всі місяці
+          //-   li.select__month--item серпень
+          //-   li.select__month--item липень
+          //-   li.select__month--item червень
+          //-   li.select__month--item травень
+          //-   li.select__month--item квітень
+          //-   li.select__month--item березень
+          //-   li.select__month--item лютий
+          //-   li.select__month--item січень
+          //-   li.select__month--item ГРУДЕНЬ
+          //-   li.select__month--item ЛИСТОПАД
+          //-   li.select__month--item ЖОВТЕНЬ 
+      a(href='#').realty__link
+        span.realty__text хід будівництва
+    ul.news-content__list
+      li.news-content__item
+        a(href="single-news.html").news-content__link
+          .news-content__img 
+            img(src="./assets/images/news1.jpg", alt="")
+          .news-content__date 30.11.2021
+          .news-content__description 
+            p.news-content__text Житловий комплекс "PARK LAND" - коли комфорт клієнта на першому місці.
+            .button--skoll-arrow
+              +svg('arrow-next').swiper-slide-arrow
+      li.news-content__item.news-content__item--offer
+        a(href="single-news.html").news-content__link
+          .news-content__img 
+            img(src="./assets/images/main-news2.jpg", alt="")
+          .news-content__date 30.11.2021
+          .news-content__description 
+            p.news-content__text Житловий комплекс "PARK LAND" - коли комфорт клієнта на першому місці.
+            .button--skoll-arrow
+              +svg('arrow-next').swiper-slide-arrow
+      li.news-content__item
+        a(href="single-news.html").news-content__link
+          .news-content__img 
+            img(src="./assets/images/main-news3.jpg", alt="")
+          .news-content__date 30.11.2021
+          .news-content__description 
+            p.news-content__text Житловий комплекс "PARK LAND" - коли комфорт клієнта на першому місці.
+            .button--skoll-arrow
+              +svg('arrow-next').swiper-slide-arrow
+      li.news-content__item
+        a(href="single-news.html").news-content__link
+          .news-content__img 
+            img(src="./assets/images/main-news1.jpg", alt="")
+          .news-content__date 30.11.2021
+          .news-content__description 
+            p.news-content__text Житловий комплекс "PARK LAND" - коли комфорт клієнта на першому місці.
+            .button--skoll-arrow
+              +svg('arrow-next').swiper-slide-arrow
+      li.news-content__item
+        a(href="single-news.html").news-content__link
+          .news-content__img 
+            img(src="./assets/images/news1.jpg", alt="")
+          .news-content__date 30.11.2021
+          .news-content__description 
+            p.news-content__text Житловий комплекс "PARK LAND" - коли комфорт клієнта на першому місці.
+            .button--skoll-arrow
+              +svg('arrow-next').swiper-slide-arrow
+      li.news-content__item
+        a(href="single-news.html").news-content__link
+          .news-content__img 
+            img(src="./assets/images/main-news2.jpg", alt="")
+          .news-content__date 30.11.2021
+          .news-content__description 
+            p.news-content__text Житловий комплекс "PARK LAND" - коли комфорт клієнта на першому місці.
+            .button--skoll-arrow
+              +svg('arrow-next').swiper-slide-arrow
+
+    .plagination
+      .plagination__list
+        .plagination__item.plagination__item--current 1
+        .plagination__item 2
+        .plagination__item 3
+        .plagination__item 4
+block header
+  include ../includes/header.pug
+block footer
+  include ../includes/footer.pug
+
+
+

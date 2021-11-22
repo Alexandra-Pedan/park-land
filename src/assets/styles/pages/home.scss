@@ -365,7 +365,14 @@
       width: 90px;
       height: 56px;
       stroke: #f0f0f0;
+      stroke-width: 2px;
       cursor: pointer;
+      transition: $transition-fuction;
+      &:hover {
+        @include from(992px) {
+          stroke: $green;
+        }
+      }
     }
   }
 }
@@ -546,6 +553,13 @@
       height: 56px;
       stroke: #2d2d2d;
       cursor: pointer;
+      stroke-width: 2px;
+      transition: $transition-fuction;
+      &:hover {
+        @include from(992px) {
+          stroke: $green;
+        }
+      }
     }
   }
 
