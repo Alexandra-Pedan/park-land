@@ -1,3 +1,54 @@
 .single-news {
-  background: #cbd2c5;
+  background: #f0f0f0;
+  .breadcrumbs {
+    padding: calc(var(--header-h) + 60px) vw(100, 1920) 27px 0;
+    margin: 0;
+  }
+}
+
+.single-container {
+  width: 100%;
+  padding: 60px 80px;
+  background: #ffffff;
+  &__title {
+    font-size: 38px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #2d2d2d;
+    margin-bottom: 40px;
+  }
+  &__img {
+    margin-bottom: 40px;
+  }
+  &__img--offer {
+    position: relative;
+    &::before {
+      content: '';
+      display: inline-block;
+      background: url('../images/star-offer.svg') no-repeat center / cover;
+      width: 65px;
+      height: 65px;
+      position: absolute;
+      right: -32px;
+      top: -32px;
+    }
+  }
+  &__text {
+    font-size: 20px;
+    line-height: 150%;
+    color: #435055;
+    padding-bottom: 40px;
+  }
+}
+.single-container__link-next {
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #435055;
+  margin-top: 60px;
 }

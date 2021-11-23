@@ -1,0 +1,54 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Галерея'
+    var id_page = 'gallery'
+    var class_page = 'gallery'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/gallery.js')
+block content
+  section.panorama-content
+    include ../includes/breadcrumbs.pug
+    .documents-content
+      .documents-sticker
+        h5 gallery
+    
+    .swiper.mySwiper
+      .swiper-wrapper
+        .swiper-slide
+          img(src="./assets/images/gallery1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/gallery1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/gallery1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/gallery1.jpg", alt="")
+      .swiper-button-next
+      .swiper-button-prev
+      .swiper-pagination
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug
+
+
+

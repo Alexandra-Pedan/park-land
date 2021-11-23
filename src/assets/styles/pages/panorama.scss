@@ -1,0 +1,23 @@
+iframe {
+  border-style: none;
+  // position: fixed;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  // margin-top: var(--header-h);
+  // z-index: -1;
+}
+
+.panorama-content {
+  .breadcrumbs {
+    padding: calc(var(--header-h) + 60px) vw(100, 1920) 27px 0;
+    margin: 0;
+    position: relative;
+    z-index: 5;
+  }
+  .documents-content {
+    z-index: 5;
+  }
+}

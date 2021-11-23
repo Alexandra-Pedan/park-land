@@ -1,0 +1,117 @@
+.map {
+  height: 700px;
+  position: relative;
+  margin-bottom: 50px;
+  #map {
+    height: 700px;
+  }
+}
+.contact-card {
+  width: 412px;
+  height: 662px;
+  background: #ffffff;
+  padding: 40px 60px;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.contact-card__title {
+  font-size: 16px;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: #2d2d2d;
+  margin-bottom: 10px;
+}
+.contact-card__adress {
+  font-size: 20px;
+  line-height: 130%;
+  color: #2d2d2d;
+  margin-bottom: 10px;
+}
+
+.contact-card__link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #435055;
+  margin-top: 10px;
+}
+
+.connection {
+  // width: 100%;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  &__title {
+    font-size: 16px;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: #2d2d2d;
+    margin-bottom: 10px;
+  }
+  &__person {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    &--img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    &--info {
+      display: flex;
+      flex-direction: column;
+    }
+    &--name {
+      font-size: 20px;
+      line-height: 130%;
+      color: #2d2d2d;
+    }
+    &--position {
+      font-size: 16px;
+      line-height: 130%;
+      color: #6b6b6b;
+    }
+  }
+  &__tel {
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 130%;
+    color: #2d2d2d;
+    margin-bottom: 10px;
+  }
+}
+.social {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  &__title {
+    font-size: 16px;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: #2d2d2d;
+    margin-bottom: 10px;
+  }
+  &__list {
+    display: flex;
+  }
+  &__item {
+    margin-right: 30px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 130%;
+    color: #2d2d2d;
+  }
+}
