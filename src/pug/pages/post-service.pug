@@ -1,0 +1,69 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Обслуговуюча компанія'
+    var id_page = 'post-service'
+    var class_page = 'post-service'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/map.js')
+block content
+  include ../includes/breadcrumbs.pug
+  section.documents-content
+    .documents-sticker
+      h5 post service
+    h1.documents-title Обслуговуюча компанія
+    .post-service
+      .post-service__title
+        h3 Будівельна компанія GAZDA відповідально відноситься до будівництва кожного об'єкта:
+      .post-service__content
+        .post-service__img
+          img(src="./assets/images/post-service.jpg", alt="")
+        ul.post-service__list
+          li.post-service__item 
+            .post-service__item--number 1
+            .post-service__item--text Утримання прибудинкової території та внутрішніх дворів
+          li.post-service__item 
+            .post-service__item--number 2
+            .post-service__item--text Догляд за зеленими насадженнями
+          li.post-service__item 
+            .post-service__item--number 3
+            .post-service__item--text Контроль за справністю інженерних мереж будинку
+          li.post-service__item 
+            .post-service__item--number 4
+            .post-service__item--text Прибирання та утримання під'їздів
+          li.post-service__item 
+            .post-service__item--number 5
+            .post-service__item--text Інші поточні питання, пов'язані із функціонуванням комплексу
+      .post-service__question Якщо у вас залишились запитання Телефонуйте 
+        a(href="tel:+380505008584") + 38 (050) 500-85-84 
+        | або залишайте заявку на сайті 
+
+      .post-service__link
+        a(href='#').realty__link.js-call
+          span.realty__text замовити дзвінок 
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug
+
+
+

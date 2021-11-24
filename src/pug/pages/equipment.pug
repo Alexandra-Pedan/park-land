@@ -1,0 +1,64 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Комплектація квартир'
+    var id_page = 'equipment'
+    var class_page = 'equipment'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/equipment.js')
+block content
+  include ../includes/breadcrumbs.pug
+  section.documents-content
+    .documents-sticker
+      h5 Complete set
+    h1.documents-title Комплектація квартир 
+    .post-service
+      .post-service__content
+        .post-service__img
+          img(src="./assets/images/equipment1.jpg", alt="")
+        .accordion.js-accordion
+          .accordion-item.js-services
+            .accordion-arrow +
+            .accordion-toggle опалення
+            .accordion-panel
+              .panel-container
+                p Наша Будівельна компанія монтує теплу підлогу в кожній кімнаті, встановлює котел для обігріву фірми Bosch,  бойлер на підігрів води та гребінку для регулювання температури теплої підлоги
+          .accordion-item.js-services
+            .accordion-arrow +
+            .accordion-toggle Покращена шумоізоляція
+            .accordion-panel
+              .panel-container
+                p Перегородки між квартирами ми робимо наступним чином: цегла ECOBLOCK 250 мм, далі ми ставимо мінеральну вату 50 мм і додатково керамоблок Porotherm 80 мм. З такими стінами Ви можете не турбуватися, що Вас розбудять звуки порохотяга чи музики, а пізні застілля у сусідів не дадуть можливості відпочити після важкого робочого дня
+                
+
+
+        //- .commercial-link
+        //-   .commercial-link__text жк park land - Ідеальне місце для бізнесу
+        //-   a(href='#').realty__link
+        //-     span.realty__text обрати комерцію
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug
+
+
+

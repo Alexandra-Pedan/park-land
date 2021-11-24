@@ -1,0 +1,104 @@
+.accordion {
+  width: 47.5%;
+  &-item {
+    border-bottom: 1px solid #cbd2c5;
+    position: relative;
+    transition: $transition-fuction;
+    overflow: hidden;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+
+    // &.is-open:hover {
+    //   @include from(992px) {
+    //     border-bottom: 1px solid #000000;
+    //     .accordion-toggle {
+    //       color: $black;
+    //     }
+    //     .accordion-arrow {
+    //       svg {
+    //         fill: $white;
+    //         .accordion-arrow-stroke {
+    //           stroke: $white;
+    //           fill: $black;
+    //         }
+    //         circle {
+    //           stroke: $black;
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+  }
+  &-toggle {
+    // display: block;
+    cursor: pointer;
+    margin: 0;
+    border: 0;
+    text-align: left;
+    transition: $transition-fuction;
+    font-size: 28px;
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #2d2d2d;
+  }
+
+  // padding: 21px;
+  .panel-container {
+    p {
+      font-size: 20px;
+      line-height: 150%;
+      color: #435055;
+      padding-top: 20px;
+    }
+  }
+
+  &-arrow {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 20px;
+    transition: $transition-fuction;
+    pointer-events: none;
+    // svg {
+    //   width: 80px;
+    //   height: 80px;
+    //   fill: $black;
+    //   transition: $transition-fuction;
+    //   @include to(1440px) {
+    //     width: 60px;
+    //     height: 60px;
+    //   }
+    //   @include to(992px) {
+    //     width: 40px;
+    //     height: 40px;
+    //   }
+    //   @include to(575px) {
+    //     width: 35px;
+    //     height: 35px;
+    //   }
+    //   .accordion-arrow-stroke {
+    //     fill: $white;
+    //     stroke: $black;
+    //     transition: $transition-fuction;
+    //   }
+    //   circle {
+    //     fill: $white;
+    //     transition: $transition-fuction;
+    //   }
+    // }
+    .is-open > & {
+      transform: rotate(180deg);
+      // svg {
+      //   fill: $white;
+      //   .accordion-arrow-stroke {
+      //     fill: $black;
+      //     stroke: $white;
+      //   }
+      //   circle {
+      //     fill: $black;
+      //   }
+      // }
+    }
+  }
+}
