@@ -1,0 +1,68 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Локацiя'
+    var id_page = 'location'
+    var class_page = 'location'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+block content
+  include ../includes/breadcrumbs.pug
+  section.documents-content
+    .documents-sticker
+      h5 location 
+    h1.documents-title Локацiя
+    .service
+      .service__title
+        h2 Для реалізації нашого ЖК PARK LAND ми обрали один з кращих районів міста - НОВИЙ РАЙОН 
+      .service__notes
+        p Єдиний в Закарпатській області закритий двір-парк із зонами відпочинку для дітей та дорослих буде реалізовано саме в Новому районі
+      .service__video
+        img(src="./assets/images/service.jpg", alt="")
+      .service__title
+        h2 Адже тут найзручніша локація для комфортного проживання: поруч супермаркети, продуктовий ринок, торговельні центри, школи та садочки
+      .service__notes
+        p В Новому районі Ви знайдете місце, де можна випити запашну каву та місце, де є можливість повечеряти всією родиною
+      .service__img
+        img(src="./assets/images/location1.jpg", alt="")
+      .service__title
+        h2 Після реконструкції головної вулиці мікрорайону, тут з’явився один з найпопулярніших розважальних центрів міста, зручна алея для прогулянок та новенька велосипедна доріжка, яка з’єднує Лівобережну та Правобережну частину міста Ужгород
+      .service__notes
+        p Район володіє чудовою транспортною розв’язкою, забезпечений системою громадського транспорту, завдяки чому, звідси можна добратися майже до будь якої точки міста
+      .service__img
+        img(src="./assets/images/location2.jpg", alt="")
+      .service__title
+        h2 В районі також розташовані корпуси університету, дитячі садочки та школи, а деякі з них – найкращі в Ужгороді
+      .service__notes
+        p Безліч гуртків та спортивних секцій, що створені як на базі шкіл, так і інших культурно-просвітницьких центрів, забезпечать ваших дітей корисним та здоровим дозвіллям, що є надзвичайно важливим в сучасному міському житті
+      .service__img
+        img(src="./assets/images/location3.jpg", alt="")
+      .commercial-link
+        .commercial-link__text дізнайтеся більше про  локацію і інфраструктуру біля жк parkland
+        a(href='#').realty__link
+          span.realty__text інфраструктура
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug
+
+
+

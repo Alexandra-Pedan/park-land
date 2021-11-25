@@ -7,7 +7,19 @@
     overflow: hidden;
     padding-bottom: 10px;
     margin-bottom: 40px;
-
+    &.is-open {
+      border-bottom: none;
+      .accordion-toggle {
+        border-bottom: 1px solid $green;
+        padding-bottom: 10px;
+      }
+      &:hover {
+        border-bottom: none;
+      }
+    }
+    &:hover {
+      border-bottom: 1px solid $green;
+    }
     // &.is-open:hover {
     //   @include from(992px) {
     //     border-bottom: 1px solid #000000;
@@ -41,6 +53,14 @@
     letter-spacing: 0.01em;
     text-transform: uppercase;
     color: #2d2d2d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .is-open > & {
+      .plus::before {
+        height: 0;
+      }
+    }
   }
 
   // padding: 21px;
@@ -60,45 +80,47 @@
     top: 20px;
     transition: $transition-fuction;
     pointer-events: none;
-    // svg {
-    //   width: 80px;
-    //   height: 80px;
-    //   fill: $black;
-    //   transition: $transition-fuction;
-    //   @include to(1440px) {
-    //     width: 60px;
-    //     height: 60px;
-    //   }
-    //   @include to(992px) {
-    //     width: 40px;
-    //     height: 40px;
-    //   }
-    //   @include to(575px) {
-    //     width: 35px;
-    //     height: 35px;
-    //   }
-    //   .accordion-arrow-stroke {
-    //     fill: $white;
-    //     stroke: $black;
-    //     transition: $transition-fuction;
-    //   }
-    //   circle {
-    //     fill: $white;
-    //     transition: $transition-fuction;
-    //   }
-    // }
+
     .is-open > & {
       transform: rotate(180deg);
-      // svg {
-      //   fill: $white;
-      //   .accordion-arrow-stroke {
-      //     fill: $black;
-      //     stroke: $white;
-      //   }
-      //   circle {
-      //     fill: $black;
-      //   }
-      // }
     }
   }
+}
+
+.accordion-link {
+  margin: 30px 0 40px 0;
+}
+
+.accordion-plus {
+  position: relative;
+  width: 15px;
+  height: 15px;
+}
+.plus {
+  position: absolute;
+  right: -7px;
+  top: 0px;
+  width: 15px;
+  height: 15px;
+  &:before,
+  &:after {
+    position: absolute;
+    left: 0;
+    content: ' ';
+    height: 15px;
+    width: 1px;
+    background-color: #333;
+    transition: $transition-fuction;
+  }
+  &:before {
+    transform: rotate(0deg);
+  }
+  &:after {
+    transform: rotate(-90deg);
+  }
+}
+
+.equipment-img {
+  height: 650px;
+  background: $black;
 }
