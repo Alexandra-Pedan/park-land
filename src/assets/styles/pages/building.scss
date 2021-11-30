@@ -1,0 +1,213 @@
+.building-content__description {
+  display: flex;
+  justify-content: space-between;
+}
+.building-content__date {
+  display: flex;
+  align-items: center;
+  svg {
+    width: 13px;
+    height: 13px;
+    fill: none;
+    stroke: $black;
+    margin-right: 10px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #2d2d2d;
+  }
+}
+.building-content__info {
+  display: flex;
+  align-items: center;
+  svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #2d2d2d;
+  }
+}
+.news-content__img.building-content__img {
+  margin-bottom: 20px;
+}
+
+.building-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  // visibility: hidden;
+  // opacity: 0;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  height: 100vh;
+  width: 100%;
+  z-index: 99;
+  // pointer-events: none;
+  background: #2d2d2d;
+  &.build-popup-active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: painted;
+  }
+}
+.building-popup__container {
+  // position: relative;
+  padding: 150px vw(397, 1920);
+}
+.building-sticker {
+  position: absolute;
+  left: 0;
+  top: 150px;
+  width: 270px;
+  height: 65px;
+  background: $green;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding-left: 100px;
+  display: flex;
+  align-items: center;
+  h5 {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+}
+.building-popup__close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // margin: 50px auto 45px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  width: 65px;
+  height: 65px;
+  background: #464646;
+  border-radius: 50%;
+  cursor: pointer;
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+.building-popup__container {
+  .swiper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper-wrapper {
+    margin-bottom: 45px;
+    height: 58vh;
+  }
+
+  .swiper-pagination {
+    padding: 20px 80px;
+    background: #464646;
+    border-radius: 1000px;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #ffffff;
+    position: relative;
+  }
+  .swiper-pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .swiper-button-container {
+    display: flex;
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 65px;
+      height: 65px;
+      background: #ffffff;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        stroke: $black;
+        width: 16px;
+        height: 15px;
+        stroke-width: 6px;
+      }
+    }
+    .swiper-button-prev {
+      margin-right: 40px;
+    }
+  }
+}
+.building-video {
+  position: absolute;
+  top: 255px;
+  left: vw(100, 1920);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  .building-video__btn {
+    width: 65px;
+    height: 65px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+  }
+  p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #f0f0f0;
+    width: 152px;
+  }
+}
+
+.building-swiper-video {
+  width: 100%;
+  height: 100%;
+}
