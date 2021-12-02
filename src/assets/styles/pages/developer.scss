@@ -23,3 +23,249 @@
     width: 560px;
   }
 }
+
+.swiper-container-arrow {
+  display: flex;
+  justify-content: space-between;
+  width: 137px;
+  .swiper-button-arrow {
+    width: 52px;
+    height: 30px;
+    stroke: #435055;
+    stroke-width: 2px;
+    cursor: pointer;
+    transition: $transition-fuction;
+    &:hover {
+      @include from(992px) {
+        stroke: $green;
+      }
+    }
+  }
+}
+.residential-container__title {
+  display: flex;
+  justify-content: space-between;
+}
+.residential {
+  margin-top: 50px;
+}
+.residential__title {
+  font-size: 28px;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #2d2d2d;
+}
+.swiper-residential {
+  overflow: hidden;
+  margin-top: 20px;
+  .swiper-slide {
+    width: 25%;
+    a {
+      text-decoration: none;
+      font-size: 16px;
+      line-height: 120%;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: #2d2d2d;
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
+      .residential-slide__title {
+        margin-top: 15px;
+      }
+      .residential-slide__img {
+        overflow: hidden;
+        img {
+          transition: $transition-fuction;
+        }
+      }
+    }
+  }
+}
+
+.our-projects {
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+  &__title {
+    font-size: 38px;
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #343434;
+    margin-bottom: 20px;
+  }
+  &__reviews {
+    display: flex;
+    p {
+      font-size: 28px;
+      line-height: 150%;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: #2d2d2d;
+    }
+    a {
+      color: $green;
+      font-size: 28px;
+      line-height: 150%;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.service.developer-object {
+  margin-top: 150px;
+}
+
+.developer-advertising__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.developer-advertising {
+  &__text {
+    width: 47.5%;
+    font-size: 28px;
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #343434;
+  }
+  &__text--little {
+    width: 47.5%;
+    font-size: 20px;
+    line-height: 150%;
+    color: #435055;
+  }
+}
+
+.developer-advertising__title {
+  padding-top: 150px;
+  font-size: 38px;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #343434;
+}
+.developer-bonuses {
+  margin-top: 150px;
+  .post-service__content {
+    flex-direction: row-reverse;
+    margin-bottom: 50px;
+  }
+}
+
+.developer-awards {
+  margin-top: 150px;
+  &__title {
+    font-size: 38px;
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #343434;
+  }
+  &__list {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__item {
+    margin-right: 20px;
+    width: 13.4%;
+    height: 12vh;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.our-projects__list {
+  width: 36.4%;
+  background: #ffffff;
+  padding: 20px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: calc(100% - 40px);
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  width: 3px;
+  height: 40px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $green;
+}
+.our-projects__item {
+  background: #ffffff;
+  box-shadow: 1px 1px 15px #d6d6d6;
+  margin-bottom: 10px;
+  height: 110px;
+  &:hover {
+    @include from(992px) {
+      .our-projects__link {
+        transform: scale(1.05);
+      }
+    }
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.our-projects__link {
+  text-decoration: none;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: $transition-fuction;
+  // &:hover {
+  //   @include from(992px) {
+  //     img {
+  //       transform: scale(1.1);
+  //     }
+  //   }
+  // }
+  &--img {
+    width: 44%;
+    overflow: hidden;
+  }
+  &--text {
+    width: 56%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    .name {
+      font-size: 16px;
+      line-height: 120%;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: #2d2d2d;
+      margin-bottom: 5px;
+    }
+    .readiness {
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 150%;
+      letter-spacing: 0.01em;
+      color: #435055;
+    }
+    .price {
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 150%;
+      letter-spacing: 0.01em;
+      color: #435055;
+    }
+  }
+}
