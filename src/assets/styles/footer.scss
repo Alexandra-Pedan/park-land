@@ -124,11 +124,11 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 143px 100px 143px 60px;
-  li {
+  .footer-info-item {
     margin-bottom: 40px;
     &:hover {
       @include from(992px) {
-        a {
+        .description {
           color: $green;
         }
       }
@@ -161,11 +161,25 @@ footer {
   }
   .footer-social {
     display: flex;
-    li {
+    &-item {
       margin-right: 30px;
       &:last-child {
         margin-right: 0;
       }
+      &:hover {
+        @include from(992px) {
+          .footer-social-link {
+            color: $green;
+          }
+        }
+      }
+    }
+    &-link {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 130%;
+      color: #f0f0f0;
+      transition: $transition-fuction;
     }
   }
 }

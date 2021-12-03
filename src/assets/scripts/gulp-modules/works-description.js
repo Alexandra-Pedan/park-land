@@ -38,11 +38,11 @@ function sideSwitchArrow(swiper, arrow, container, cbOnClick = () => {}) {
   arrow.style.cursor = 'none';
   arrow.style.position = 'fixed';
   arrow.style.zIndex = 10;
-  arrow.__proto__.hide = function() {
+  arrow.__proto__.hide = function () {
     this.style.opacity = '0';
     this.style.pointerEvents = 'none';
   };
-  arrow.__proto__.show = function() {
+  arrow.__proto__.show = function () {
     this.style.opacity = '1';
     // this.style.pointerEvents = 'auto';
   };
@@ -85,7 +85,7 @@ function sideSwitchArrow(swiper, arrow, container, cbOnClick = () => {}) {
       // switchGallerySlide('rightSide')
     }
   }
-  container.addEventListener('click', evt => {
+  container.addEventListener('click', (evt) => {
     switchGallerySlide(arrow.dataset.side);
     cbOnClick(evt);
   });
@@ -126,13 +126,13 @@ const dataWorkPopupSwiper = new Swiper('[data-works-popup-swiper]', {
     prevEl: worksPopup.querySelector('.popup-button-prev'),
   },
 });
-dataWorkPopupSwiper.on('update', swiper => {
+dataWorkPopupSwiper.on('update', (swiper) => {
   console.log('fffefeg');
   allCount.textContent = swiper.slides.length;
   currentCount.textContent = swiper.activeIndex + 1;
   swiper.slideTo(0);
 });
-dataWorkPopupSwiper.on('slideChange', swiper => {
+dataWorkPopupSwiper.on('slideChange', (swiper) => {
   currentCount.textContent = swiper.activeIndex + 1;
   console.log(swiper);
 });
@@ -152,13 +152,13 @@ function getMiniSliderImages(slider) {
   const images = Array.from(slider.querySelectorAll('.swiper-slide')).map(el => el.cloneNode(true));
   const sliderContainer = document.querySelector('[data-works-popup-swiper] .swiper-wrapper');
   sliderContainer.innerHTML = '';
-  images.forEach(img => {
+  images.forEach((img) => {
     sliderContainer.insertAdjacentElement('afterbegin', img);
   });
   dataWorkPopupSwiper.update();
 }
 
-$miniSliders.forEach(el => {
+$miniSliders.forEach((el) => {
   el.addEventListener('click', () => {
     gsap.to(worksPopup, { autoAlpha: 1, duration: 0.1 });
     getMiniSliderImages(el);
@@ -177,8 +177,8 @@ sideSwitchArrow(
   swiper,
   document.querySelector('.btn-works'),
   document.querySelector('.production-swiper'),
-  evt => {
-    let videoSlide = evt.target.closest('.swiper-slide');
+  (evt) => {
+    const videoSlide = evt.target.closest('.swiper-slide');
     console.log(evt.target);
     if (videoSlide !== null) {
       // console.log(videoSlide.querySelector('iframe').src);
