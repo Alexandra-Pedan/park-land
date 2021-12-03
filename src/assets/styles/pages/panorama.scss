@@ -21,3 +21,43 @@
     z-index: 5;
   }
 }
+
+
+.panorama {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  &__image {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 360%;
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+  &__nav {
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%);
+    width: 20vw;
+    // height: calc(20vw / 3.6);
+    img {
+      height: 100%;
+    }
+  }
+  &__nav-scope {
+    position: absolute;
+    left: 0;
+    top: -1px;
+    width: 20%;
+    height: 100%;
+    border-radius: 5px;
+    border: 2px solid #79b43e;
+    background-color: #79b43e7a;
+  }
+}
