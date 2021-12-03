@@ -45,11 +45,11 @@ const forms = [
 
 // const formsTel = ['[data-home-contact]', '[data-form-homepage]'];
 // const formsTel = ['[data-form-homepage]'];
-const formsTel = ['[data-popup-form]'];
+const formsTel = ['[data-popup-form]', '[data-footer-form]'];
 
 formsTel.forEach((form) => {
   const $form = document.querySelector(form);
-  console.log($form);
+  // console.log($form);
   if ($form) {
     /* eslint-disable */
     new FormMonster({
@@ -83,8 +83,16 @@ formsTel.forEach((form) => {
             }),
             rule: yup
               .string()
-              // .nullable()
               .required(i18next.t('required'))
+              .test(
+                'phone',
+                'wow',
+                (evt) => {
+                  const digitsCount = evt.replace(/[^0-9]/g, '');
+                  return digitsCount.length >= 12;
+                },
+                'Must be only digits',
+              )
               .min(16, i18next.t('field_too_short', { cnt: 19 - 7 })),
 
             defaultMessage: i18next.t('phone'),

@@ -98,6 +98,7 @@ label {
   color: red;
   line-height: 1.7;
   padding: 15px 0;
+  min-height: 50px;
   transition: opasity 0.4s ease-in-out;
 }
 
@@ -145,7 +146,9 @@ label {
     }
   }
 }
-
+[data-btn-submit-text] {
+  display: none;
+}
 // .form-header-call {
 //   background: rgba(0, 0, 0, 0.7);
 //   width: 100vw;

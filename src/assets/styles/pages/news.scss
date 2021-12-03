@@ -12,7 +12,7 @@
   position: relative;
   margin-right: 60px;
   cursor: pointer;
-
+  z-index: 20;
   &--list {
     width: 236px;
     height: 65px;
@@ -32,7 +32,12 @@
     letter-spacing: 0.01em;
     text-transform: uppercase;
     color: #2d2d2d;
-    padding: 0px 50px 21px 50px;
+    transition: $transition-fuction;
+    &:hover {
+      @include from(992px) {
+        color: $green;
+      }
+    }
   }
   &--selected {
     width: 236px;
@@ -98,6 +103,12 @@
     text-transform: uppercase;
     color: #2d2d2d;
     padding: 0px 50px 21px 50px;
+    transition: $transition-fuction;
+    &:hover {
+      @include from(992px) {
+        color: $green;
+      }
+    }
   }
   &--selected {
     width: 236px;
@@ -109,6 +120,7 @@
     line-height: 140%;
     letter-spacing: 0.01em;
     text-transform: uppercase;
+    white-space: nowrap;
     color: #2d2d2d;
     padding: 21px 50px;
     transition: $transition-fuction;
