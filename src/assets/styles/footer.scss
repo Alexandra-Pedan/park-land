@@ -55,10 +55,12 @@ footer {
     padding-top: 40px;
     .form-field {
       display: flex;
+      width: 100%;
       .form-field-input {
         display: flex;
         flex-direction: column;
         margin-right: 50px;
+        width: 41%;
         label {
           font-size: 16px;
           line-height: 100%;
@@ -68,7 +70,8 @@ footer {
           margin-bottom: 14px;
         }
         .input-footer {
-          width: 458px;
+          // width: 458px;
+
           height: 80px;
           padding-left: 40px;
           border-radius: 5px;
@@ -91,6 +94,7 @@ footer {
   display: inline-block;
   border-radius: 50%;
   border: none;
+  flex-shrink: 0;
   &::before {
     content: '';
     background: $green;
@@ -192,7 +196,7 @@ footer {
     width: 65px;
     height: 65px;
     overflow: hidden;
-    background: $green;
+    // background: $green;
     background: transparent;
     position: relative;
     display: inline-block;

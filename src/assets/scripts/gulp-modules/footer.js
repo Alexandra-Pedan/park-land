@@ -11,7 +11,7 @@ if (buttonUp) {
     window.locoScroll.scrollTo(0);
   });
 }
-console.log(buttonUp);
+// console.log(buttonUp);
 
 // // form
 // const btn = document.querySelector('.form-button-js');

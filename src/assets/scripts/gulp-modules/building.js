@@ -63,7 +63,7 @@ function createBuildCard(build) {
   //     </div>
   //   </div>
   // </a>`;
-  return `<li class="news-content__item building-content__item js-build-card"  data-build-id="${build.id}">
+  return `<li class="news-content__item building-content__item js-build-card" data-filter-item data-year="${build.date.y}" data-month="${build.date.m}" data-build-id="${build.id}">
   <svg class="icon--plus building-plus" role="presentation">
     <use xlink:href="#icon-plus"></use>
   </svg>
@@ -75,14 +75,14 @@ function createBuildCard(build) {
         <use xlink:href="#icon-clock"></use>
       </svg>
        <p><span data-build-date="">${build.date.d} </span>
-       <span data-build-month=""> ${build.month}</span>
+       <span  data-build-month=""> ${build.month}</span>
        <span data-build-year=""> ${build.date.y}</span></p>
     </div>
     <div class="building-content__info">
       <svg role="presentation">
         <use xlink:href="#icon-slides"></use>
       </svg>
-      <p>${build.count}</p>
+      <p>${build.slider.length}</p>
     </div>
   </div>
     </div>
@@ -162,6 +162,7 @@ async function getBuilds() {
       },
       id: '723',
       month: 'Травень',
+      // count: '5',
       slider: [
         './assets/images/building1.jpg',
         './assets/images/building2.jpg',
@@ -189,8 +190,8 @@ async function getBuilds() {
     },
     {
       date: {
-        d: '19',
-        m: '05',
+        d: '10',
+        m: '04',
         y: '2021',
       },
       id: '724',
@@ -205,8 +206,8 @@ async function getBuilds() {
     {
       date: {
         d: '19',
-        m: '05',
-        y: '2021',
+        m: '09',
+        y: '2020',
       },
       id: '725',
       month: 'Травень',
@@ -220,9 +221,9 @@ async function getBuilds() {
     },
     {
       date: {
-        d: '19',
+        d: '29',
         m: '05',
-        y: '2021',
+        y: '2020',
       },
       id: '726',
       month: 'Травень',
@@ -237,9 +238,9 @@ async function getBuilds() {
     },
     {
       date: {
-        d: '19',
+        d: '05',
         m: '05',
-        y: '2021',
+        y: '2019',
       },
       id: '727',
       month: 'Травень',
@@ -255,8 +256,8 @@ async function getBuilds() {
     {
       date: {
         d: '19',
-        m: '05',
-        y: '2021',
+        m: '01',
+        y: '2019',
       },
       id: '728',
       month: 'Травень',
@@ -326,6 +327,8 @@ async function initBuild() {
 
   // containers.loadMore.addEventListener('click', () => loadMoreHandler(state, containers));
   loadMoreHandler(state, containers);
+  // init filter location in filter.js
+  initFilter();
 
   // sideSwitchArrow(
   //   document.querySelector('.btn-gallery'),

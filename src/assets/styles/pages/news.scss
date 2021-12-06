@@ -15,13 +15,16 @@
   z-index: 20;
   &--list {
     width: 236px;
-    height: 65px;
+    height: auto;
+    padding-top: 20px;
     background: #f0f0f0;
     border-radius: 0 0 40px 40px;
     visibility: hidden;
     opacity: 0;
-    transition: $transition-fuction;
+    // transition: $transition-fuction;
     position: absolute;
+    top: 40px;
+    transition: opacity 0.45s ease, visibility 0.45s ease;
   }
   &--item {
     padding: 20px 50px;
@@ -58,20 +61,25 @@
       height: 13px;
       background: url('../images/filter-arrow.svg') no-repeat center / cover;
       margin-left: 90px;
-      transition: $transition-fuction;
+      // transition: all 0.1s ease;
+      position: absolute;
+      top: 50%;
+      right: 50px;
+      transform: translate(0, -50%);
     }
   }
   &:hover {
     .select__year--selected::after {
       transform: rotate(180deg);
+      transform: translate(0, -50%) rotate(180deg);
     }
     .select__year--selected {
-      border-radius: 40px 40px 0 0;
+      // border-radius: 30px 30px 0 0;
     }
     .select__year--list {
       visibility: visible;
       opacity: 1;
-      height: auto;
+      // height: auto;
     }
   }
 }
@@ -82,16 +90,19 @@
 
   &--list {
     position: absolute;
+    top: 40px;
     z-index: 20;
     width: 236px;
-
-    height: 65px;
-    overflow: hidden;
+    padding-top: 20px;
+    // height: 0px;
+    height: auto;
+    // overflow: hidden;
     background: #f0f0f0;
     border-radius: 0 0 40px 40px;
-    // visibility: hidden;
+    visibility: hidden;
     opacity: 0;
-    transition: $transition-fuction;
+    // transition: $transition-fuction;
+    transition: opacity 0.45s ease, visibility 0.45s ease;
   }
   &--item {
     padding: 20px 50px;
@@ -124,26 +135,31 @@
     color: #2d2d2d;
     padding: 21px 50px;
     transition: $transition-fuction;
+
     &::after {
       content: '';
       width: 12px;
       height: 13px;
       background: url('../images/filter-arrow.svg') no-repeat center / cover;
       margin-left: 45px;
-      transition: $transition-fuction;
+      // transition: $transition-fuction;
+      position: absolute;
+      top: 50%;
+      right: 50px;
+      transform: translate(0, -50%);
     }
   }
   &:hover {
     .select__month--selected::after {
-      transform: rotate(180deg);
+      transform: translate(0, -50%) rotate(180deg);
     }
     .select__month--selected {
-      border-radius: 40px 40px 0 0;
+      // border-radius: 40px 40px 0 0;
     }
     .select__month--list {
-      // visibility: visible;
+      visibility: visible;
       opacity: 1;
-      height: auto;
+      // height: auto;
     }
   }
 }
@@ -173,6 +189,7 @@
     position: absolute;
     right: -32px;
     top: -32px;
+    z-index: 2;
   }
 }
 .news-content__link {
@@ -187,6 +204,16 @@
   @include to(1920px) {
     height: 300px;
   }
+  &:hover {
+    @include from(992px) {
+      & img {
+        transform: scale(1.06);
+      }
+    }
+  }
+}
+.news-content__img img {
+  transition: $transition-fuction;
 }
 .news-content__date {
   font-size: 18px;
@@ -199,6 +226,13 @@
 .news-content__description {
   display: flex;
   justify-content: space-between;
+  &:hover {
+    @include from(992px) {
+      .button--skoll-arrow::before {
+        transform: translate3d(0, 100%, 0);
+      }
+    }
+  }
 }
 
 .news-content__text {
@@ -230,9 +264,9 @@
     top: 0;
     left: 0;
   }
-  &:hover::before {
-    transform: translate3d(0, 100%, 0);
-  }
+  // &:hover::before {
+  //   transform: translate3d(0, 100%, 0);
+  // }
 }
 .swiper-slide-arrow {
   width: 15px;

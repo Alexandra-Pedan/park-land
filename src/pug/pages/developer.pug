@@ -24,6 +24,8 @@ block scripts
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/developer.js')
   script(defer src='./assets/scripts/no-scroll.js')
+block arrow 
+  +svg('scroll-down').js-scroll-down
 block content
   include ../includes/breadcrumbs.pug
   section.documents-content
