@@ -34,17 +34,29 @@
       font-size: 38px;
       line-height: 120%;
       color: #ffffff;
+      @include to(1440px) {
+        bottom: 30px;
+        left: vw(70, 1440);
+        font-size: 28px;
+      }
       &-current {
         font-size: 110px;
         line-height: 90%;
         text-transform: uppercase;
         color: #ffffff;
         margin-right: 20px;
+        @include to(1440px) {
+          font-size: 75px;
+          margin-right: 10px;
+        }
       }
       &-total {
         font-size: 38px;
         line-height: 120%;
         text-transform: uppercase;
+        @include to(1440px) {
+          font-size: 28px;
+        }
       }
     }
   }
@@ -55,12 +67,16 @@
 // }
 .btn-gallery {
   position: absolute;
-
+  position: fixed;
   opacity: 1;
   svg {
     width: 110px;
     height: 110px;
     transition: 0.3s ease-in-out;
+    @include to(1440px) {
+      width: 80px;
+      height: 80px;
+    }
   }
   &.left-side svg {
     transform: rotate(-180deg);

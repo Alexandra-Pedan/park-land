@@ -3,6 +3,9 @@
   .breadcrumbs {
     padding: calc(var(--header-h) + 60px) vw(100, 1920) 27px 0;
     margin: 0;
+    @include to(1440px) {
+      padding: calc(var(--header-h) + 40px) vw(70, 1440) 30px 0;
+    }
   }
 }
 
@@ -10,15 +13,25 @@
   width: 100%;
   padding: 60px 80px;
   background: #ffffff;
+  @include to(1440px) {
+    padding: 40px 60px;
+  }
   &__title {
     font-size: 38px;
     line-height: 140%;
     text-transform: uppercase;
     color: #2d2d2d;
     margin-bottom: 40px;
+    @include to(1440px) {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
   }
   &__img {
     margin-bottom: 40px;
+    @include to(1440px) {
+      margin-bottom: 30px;
+    }
   }
   &__img--offer {
     position: relative;
@@ -31,6 +44,12 @@
       position: absolute;
       right: -32px;
       top: -32px;
+      @include to(1440px) {
+        width: 47px;
+        height: 47px;
+        right: -23.5px;
+        top: -23.5px;
+      }
     }
   }
   &__text {
@@ -38,6 +57,10 @@
     line-height: 150%;
     color: #435055;
     padding-bottom: 40px;
+    @include to(1440px) {
+      font-size: 14px;
+      padding-bottom: 20px;
+    }
   }
 }
 .single-container__link-next {
@@ -51,4 +74,7 @@
   text-transform: uppercase;
   color: #435055;
   margin-top: 60px;
+  @include to(1440px) {
+    font-size: 14px;
+  }
 }

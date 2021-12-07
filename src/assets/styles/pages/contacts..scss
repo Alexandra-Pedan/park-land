@@ -3,9 +3,15 @@
   // height: 41vh;
   position: relative;
   margin-bottom: 50px;
+  @include to(1440px) {
+    height: 561px;
+  }
   #map {
     height: 700px;
     // height: 41vh;
+    @include to(1440px) {
+      height: 561px;
+    }
   }
 }
 .contact-card {
@@ -17,6 +23,11 @@
   left: 20px;
   top: 50%;
   transform: translate(0, -50%);
+  @include to(1440px) {
+    width: 314px;
+    height: 521px;
+    padding: 30px 40px;
+  }
 }
 
 .contact-card__title {
@@ -25,12 +36,18 @@
   text-transform: uppercase;
   color: #2d2d2d;
   margin-bottom: 10px;
+  @include to(1440px) {
+    font-size: 12px;
+  }
 }
 .contact-card__adress {
   font-size: 20px;
   line-height: 130%;
   color: #2d2d2d;
   margin-bottom: 10px;
+  @include to(1440px) {
+    font-size: 16px;
+  }
 }
 
 .contact-card__link {
@@ -42,6 +59,9 @@
   text-transform: uppercase;
   color: #435055;
   margin-top: 10px;
+  @include to(1440px) {
+    font-size: 12px;
+  }
 }
 
 .connection {
@@ -49,23 +69,34 @@
   margin-top: 40px;
   display: flex;
   flex-direction: column;
+  @include to(1440px) {
+    margin-top: 30px;
+  }
   &__title {
     font-size: 16px;
     line-height: 130%;
     text-transform: uppercase;
     color: #2d2d2d;
     margin-bottom: 10px;
+    @include to(1440px) {
+      font-size: 12px;
+    }
   }
   &__person {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+
     &--img {
       width: 110px;
       height: 110px;
       border-radius: 50%;
       overflow: hidden;
+      @include to(1440px) {
+        width: 80px;
+        height: 80px;
+      }
     }
     &--info {
       display: flex;
@@ -75,11 +106,17 @@
       font-size: 20px;
       line-height: 130%;
       color: #2d2d2d;
+      @include to(1440px) {
+        font-size: 16px;
+      }
     }
     &--position {
       font-size: 16px;
       line-height: 130%;
       color: #6b6b6b;
+      @include to(1440px) {
+        font-size: 12px;
+      }
     }
   }
   &__tel {
@@ -88,24 +125,42 @@
     line-height: 130%;
     color: #2d2d2d;
     margin-bottom: 10px;
+    @include to(1440px) {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+    &:last-child {
+      @include to(1440px) {
+        margin-bottom: 20px;
+      }
+    }
   }
 }
 .social {
   display: flex;
   flex-direction: column;
   margin-top: 40px;
+  @include to(1440px) {
+    margin-top: 25px;
+  }
   &__title {
     font-size: 16px;
     line-height: 130%;
     text-transform: uppercase;
     color: #2d2d2d;
     margin-bottom: 10px;
+    @include to(1440px) {
+      font-size: 12px;
+    }
   }
   &__list {
     display: flex;
   }
   &__item {
     margin-right: 30px;
+    @include to(1440px) {
+      margin-right: 20px;
+    }
     &:last-child {
       margin-right: 0;
     }
@@ -115,5 +170,8 @@
     font-size: 20px;
     line-height: 130%;
     color: #2d2d2d;
+    @include to(1440px) {
+      font-size: 16px;
+    }
   }
 }

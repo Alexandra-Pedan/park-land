@@ -23,7 +23,7 @@ block scripts
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/header.js')
-  //- script(defer src='./assets/scripts/terms.js')
+  script(defer src='./assets/scripts/terms.js')
   script(defer src='./assets/scripts/scroll-down.js')
 
 block arrow 
@@ -87,33 +87,33 @@ block content
               .calculator
                 .calculator__calculations
                   .calculator__calculations--title Калькулятор розтермінування:
-                  form.calculator__form(action="")
+                  form.calculator__form(action="" id="calculator-form")
                     .calculator__form-input 
                       label(for="") Вартість обранної нерухомості, $
-                      input(class="" type="text" name="name" placeholder="")
+                      input(class="" id="current-total" type="text" name="name" placeholder="")
                     .calculator__form-input.calculator__form-input--range
                       .calculator__form-input
                         label(for="") Мінімальний перший внесок, $ (50% від вартості)
-                        input(class="" type="text" name="name" placeholder="")
+                        input(class="" id="min-payment" type="text" name="name" placeholder="")
                       .calculator__form-range
-                        input(type="range" min="1" max="100" value="0" class="input-range" id="myRange")
+                        input(type="range" min="1" max="100" id="min-payment-control" value="0" class="input-range")
                         .slider-range 
-                          .slider-range__start 111
-                          .slider-range__end 222
+                          .slider-range__start.js-start-sum 111
+                          .slider-range__end.js-end-sum 222
                     .calculator__form-input.calculator__form-input--range
                       .calculator__form-input
                         label(for="") Термін розтермінування (від 1 до 5 місяців)
-                        input( type="text" name="name" placeholder="")
+                        input( type="text" id="term" name="name" placeholder="")
                       .calculator__form-range
-                        input(type="range" min="1" max="100" value="0" class="input-range" id="myRange")
+                        input(type="range" min="1" max="100" value="0" id="term-control" class="input-range" )
                         .slider-range 
-                          .slider-range__start 111
-                          .slider-range__end 222
+                          .slider-range__start 
+                          .slider-range__end 
                 .calculator__result 
                   .calculator__result--text Обов’язковий щомісячний платіж
-                  .calculator__result--sum-month 1 029.2 $
+                  .calculator__result--sum-month(id="month-payment") 
                   .calculator__result--text Повна вартість нерухомості після розрахунку не змінюється
-                  .calculator__result--sum 121 680.25 $
+                  .calculator__result--sum(id="total") 
 
               .accordion-panel__consultation
                 .accordion-panel__consultation-text 

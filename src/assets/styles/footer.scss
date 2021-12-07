@@ -10,8 +10,14 @@ footer {
   // padding: 50px 100px;
   padding: 50px vw(100, 1920);
   border-bottom: 1px solid #464646;
+  @include to(1440px) {
+    padding: 40px vw(70, 1440);
+  }
   li {
     margin-right: 60px;
+    @include to(1440px) {
+      margin-right: 40px;
+    }
     a {
       font-weight: 500;
       font-size: 18px;
@@ -20,6 +26,9 @@ footer {
       color: #f0f0f0;
       text-decoration: none;
       transition: $transition-fuction;
+      @include to(1440px) {
+        font-size: 14px;
+      }
       &:hover {
         @include from(992px) {
           color: $green;
@@ -43,16 +52,26 @@ footer {
   padding: 143px vw(100, 1920);
   border-right: 1px solid #464646;
   width: 69%;
+  @include to(1440px) {
+    padding: 80px vw(70, 1440);
+  }
   h3 {
     font-weight: normal;
     font-size: 64px;
     line-height: 120%;
     text-transform: uppercase;
     color: #ffffff;
-    width: 1124px;
+    // width: 1124px;
+    width: 90%;
+    @include to(1440px) {
+      font-size: 44px;
+    }
   }
   .contact-form {
     padding-top: 40px;
+    @include to(1440px) {
+      padding-top: 30px;
+    }
     .form-field {
       display: flex;
       width: 100%;
@@ -61,6 +80,9 @@ footer {
         flex-direction: column;
         margin-right: 50px;
         width: 41%;
+        @include to(1440px) {
+          margin-right: 35px;
+        }
         label {
           font-size: 16px;
           line-height: 100%;
@@ -68,6 +90,10 @@ footer {
           text-transform: uppercase;
           color: #c7c7c7;
           margin-bottom: 14px;
+          @include to(1440px) {
+            font-size: 12px;
+            margin-bottom: 10px;
+          }
         }
         .input-footer {
           // width: 458px;
@@ -75,10 +101,17 @@ footer {
           height: 80px;
           padding-left: 40px;
           border-radius: 5px;
+          @include to(1440px) {
+            height: 60px;
+            padding-left: 30px;
+          }
           &::placeholder {
             font-size: 24px;
             line-height: 130%;
             color: #2d2d2d;
+            @include to(1440px) {
+              font-size: 19px;
+            }
           }
         }
       }
@@ -94,7 +127,12 @@ footer {
   display: inline-block;
   border-radius: 50%;
   border: none;
+  padding: 0;
   flex-shrink: 0;
+  @include to(1440px) {
+    width: 79px;
+    height: 79px;
+  }
   &::before {
     content: '';
     background: $green;
@@ -121,15 +159,25 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @include to(1440px) {
+      width: 18px;
+      height: 17px;
+    }
   }
 }
 
 .footer-info {
   display: flex;
   flex-direction: column;
-  padding: 143px 100px 143px 60px;
+  padding: 143px vw(100, 1920) 143px 60px;
+  @include to(1440px) {
+    padding: 80px vw(70, 1440) 80px 40px;
+  }
   .footer-info-item {
     margin-bottom: 40px;
+    @include to(1440px) {
+      margin-bottom: 20px;
+    }
     &:hover {
       @include from(992px) {
         .description {
@@ -144,9 +192,16 @@ footer {
       text-transform: uppercase;
       color: #cbd2c5;
       margin-bottom: 8px;
+      @include to(1440px) {
+        font-size: 12px;
+        margin-bottom: 6px;
+      }
     }
     .footer-info-map {
       margin-bottom: 8px;
+      @include to(1440px) {
+        margin-bottom: 6px;
+      }
     }
     a {
       text-decoration: none;
@@ -155,12 +210,18 @@ footer {
       line-height: 130%;
       color: #f0f0f0;
       transition: $transition-fuction;
+      @include to(1440px) {
+        font-size: 17px;
+      }
     }
     p {
       font-weight: 500;
       font-size: 24px;
       line-height: 130%;
       color: #f0f0f0;
+      @include to(1440px) {
+        font-size: 17px;
+      }
     }
   }
   .footer-social {
@@ -184,6 +245,9 @@ footer {
       line-height: 130%;
       color: #f0f0f0;
       transition: $transition-fuction;
+      @include to(1440px) {
+        font-size: 17px;
+      }
     }
   }
 }
@@ -191,7 +255,11 @@ footer {
   cursor: pointer;
   position: absolute;
   top: 382px;
-  right: 100px;
+  right: vw(100, 1920);
+  @include to(1440px) {
+    top: 239px;
+    right: vw(70, 1440);
+  }
   .green-hover {
     width: 65px;
     height: 65px;
@@ -242,11 +310,18 @@ footer {
   // padding: 50px 100px 0 100px;
   padding: 50px vw(100, 1920) 0 vw(100, 1920);
   justify-content: space-between;
+  @include to(1440px) {
+    padding: 40px vw(70, 1440) 0 vw(70, 1440);
+  }
   .footer-rights {
     font-size: 13px;
     line-height: 140%;
     color: #c7c7c7;
     width: 156px;
+    @include to(1440px) {
+      font-size: 10px;
+      width: 110px;
+    }
   }
   .footer-rights-info {
     font-size: 13px;
@@ -254,9 +329,25 @@ footer {
     color: #c7c7c7;
     text-align: center;
     width: 534px;
+    @include to(1440px) {
+      font-size: 10px;
+      width: 382px;
+    }
+  }
+  .footer-dev {
+    width: 78px;
+    height: 84px;
+    @include to(1440px) {
+      width: 68px;
+      height: 73px;
+    }
   }
   .icon--smarto {
     width: 78px;
     height: 84px;
+    @include to(1440px) {
+      width: 68px;
+      height: 73px;
+    }
   }
 }

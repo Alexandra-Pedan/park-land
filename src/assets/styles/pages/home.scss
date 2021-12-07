@@ -1,8 +1,8 @@
 .main-content {
   width: 100vw;
-  height: calc(100vh - 120px);
+  height: calc(100vh - var(--header-h));
   display: flex;
-  margin-top: 120px;
+  margin-top: var(--header-h);
 
   &-description {
     width: 42%;
@@ -17,6 +17,9 @@
       justify-content: space-between;
       align-items: center;
       padding: 80px vw(100, 1920);
+      @include to(1440px) {
+        padding: 50px vw(70, 1440);
+      }
       .title {
         font-weight: normal;
         font-size: 110px;
@@ -24,6 +27,10 @@
         text-transform: uppercase;
         color: #2d2d2d;
         width: 258px;
+        @include to(1440px) {
+          font-size: 75px;
+          width: 176px;
+        }
       }
       .choose-realty {
         width: 48%;
@@ -35,6 +42,10 @@
           line-height: 160%;
           color: #435055;
           margin-bottom: 34px;
+          @include to(1440px) {
+            font-size: 14px;
+            margin-bottom: 10px;
+          }
         }
       }
     }
@@ -47,9 +58,10 @@
 .realty {
   display: flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: $transition-fuction;
-  padding: 21px 59px;
+  // padding: 21px 59px;
   width: 290px;
   height: 65px;
   // background: $green;
@@ -57,17 +69,22 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 140%;
-  text-align: center;
+  // text-align: center;
   letter-spacing: 0.01em;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
   color: #ffffff;
-  margin-right: 70px;
+  // margin-right: 70px;
   overflow: hidden;
   background: #679836;
   position: relative;
-  display: inline-block;
+  // display: inline-block;
+  @include to(1440px) {
+    width: 210px;
+    height: 50px;
+    font-size: 12px;
+  }
   span {
     position: relative;
   }
@@ -97,10 +114,13 @@
   padding: vw(150, 1920) vw(100, 1920) vw(90, 1920) vw(397, 1920);
   background: #f0f0f0;
   position: relative;
+  @include to(1440px) {
+    padding: vw(100, 1440) vw(70, 1440) vw(60, 1440) vw(281, 1440);
+  }
   .advantage-sticker {
     position: absolute;
     left: 0;
-    top: 150px;
+    top: vw(150, 1920);
     width: 270px;
     height: 65px;
     background: #2d2d2d;
@@ -109,12 +129,21 @@
     padding-left: 100px;
     display: flex;
     align-items: center;
+    @include to(1440px) {
+      top: vw(100, 1440);
+      width: 190px;
+      height: 50px;
+      padding-left: 70px;
+    }
     h5 {
       font-weight: normal;
       font-size: 18px;
       line-height: 140%;
       text-transform: uppercase;
       color: #ffffff;
+      @include to(1440px) {
+        font-size: 14px;
+      }
     }
   }
   .advantage-title {
@@ -124,12 +153,19 @@
     text-transform: uppercase;
     color: #2d2d2d;
     margin-bottom: 50px;
+    @include to(1440px) {
+      font-size: 44px;
+      margin-bottom: 30px;
+    }
   }
   &-list {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     margin-left: -30px;
+    @include to(1440px) {
+      margin-left: -20px;
+    }
   }
   &-list :nth-child(2),
   :nth-child(3),
@@ -145,9 +181,17 @@
     width: calc(58% - var(--offset));
     margin-left: calc(var(--offset) / 2);
     margin-right: calc(var(--offset) / 2);
+    @include to(1440px) {
+      margin-bottom: 40px;
+      padding: 30px;
+      --offset: 40px;
+    }
     img {
       width: 100%;
       height: 530px;
+      @include to(1440px) {
+        height: 376px;
+      }
     }
     .description {
       font-weight: normal;
@@ -155,9 +199,12 @@
       line-height: 130%;
       color: #435055;
       margin-top: 20px;
-      width: 480px;
-      // padding-right: 250px;
-      // width: 100%;
+      // width: 480px;
+      width: 70%;
+      @include to(1440px) {
+        font-size: 19px;
+        margin-top: 15px;
+      }
     }
   }
 }
@@ -165,16 +212,19 @@
 .about-us-content {
   width: 100%;
   height: 1440px;
-  // padding: 150px 100px 150px 397px;
   padding: vw(150, 1920) vw(100, 1920) vw(150, 1920) vw(397, 1920);
   background-image: url('../images/main-bgr.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  @include to(1440px) {
+    padding: vw(100, 1440) vw(70, 1440) vw(100, 1440) vw(281, 1440);
+    height: 955px;
+  }
   .about-us-sticker {
     position: absolute;
     left: 0;
-    top: 150px;
+    top: vw(150, 1920);
     width: 270px;
     height: 65px;
     background: $green;
@@ -183,12 +233,21 @@
     padding-left: 100px;
     display: flex;
     align-items: center;
+    @include to(1440px) {
+      top: vw(100, 1440);
+      padding-left: 70px;
+      width: 190px;
+      height: 50px;
+    }
     h5 {
       font-weight: normal;
       font-size: 18px;
       line-height: 140%;
       text-transform: uppercase;
       color: #ffffff;
+      @include to(1440px) {
+        font-size: 14px;
+      }
     }
   }
   .about-us-title {
@@ -198,9 +257,14 @@
     text-transform: uppercase;
     color: #ffffff;
     margin-bottom: 50px;
+    @include to(1440px) {
+      font-size: 44px;
+      margin-bottom: 30px;
+    }
   }
   .about-us-list {
-    width: 910px;
+    // width: 910px;
+    width: 50vw;
     display: flex;
     flex-wrap: wrap;
     &:nth-child(3),
@@ -214,11 +278,18 @@
   .about-us-item {
     margin-bottom: 60px;
     margin-right: 171px;
+    @include to(1440px) {
+      margin-bottom: 40px;
+      margin-right: 123px;
+    }
     h6 {
       font-weight: 500;
       font-size: 24px;
       line-height: 100%;
       color: #f0f0f0;
+      @include to(1440px) {
+        font-size: 19px;
+      }
     }
     p {
       font-weight: normal;
@@ -226,6 +297,9 @@
       line-height: 120%;
       text-transform: uppercase;
       color: #ffffff;
+      @include to(1440px) {
+        font-size: 44px;
+      }
     }
   }
 }
@@ -239,10 +313,13 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  @include to(1440px) {
+    padding: vw(100, 1440) 0 0 vw(281, 1440);
+  }
   .developer-sticker {
     position: absolute;
     left: 0;
-    top: 150px;
+    top: vw(150, 1920);
     width: 270px;
     height: 65px;
     background: #2d2d2d;
@@ -251,12 +328,21 @@
     padding-left: 100px;
     display: flex;
     align-items: center;
+    @include to(1440px) {
+      top: vw(100, 1440);
+      width: 190px;
+      height: 50px;
+      padding-left: 70px;
+    }
     h5 {
       font-weight: normal;
       font-size: 18px;
       line-height: 140%;
       text-transform: uppercase;
       color: #ffffff;
+      @include to(1440px) {
+        font-size: 14px;
+      }
     }
   }
   &-description {
@@ -270,19 +356,30 @@
       text-transform: uppercase;
       color: #2d2d2d;
       margin-bottom: 40px;
+      @include to(1440px) {
+        font-size: 44px;
+        margin-bottom: 30px;
+      }
     }
     p {
       font-weight: normal;
       font-size: 24px;
       line-height: 130%;
       color: #435055;
+      @include to(1440px) {
+        font-size: 17px;
+      }
     }
     .developer-numbers {
       display: flex;
       margin: 50px 0;
+      @include to(1440px) {
+        margin: 40px 0;
+      }
       li {
         margin-right: 100px;
         width: 110px;
+
         .title {
           font-weight: normal;
           font-size: 64px;
@@ -290,6 +387,9 @@
           text-transform: uppercase;
           color: #79b43e;
           margin-bottom: 10px;
+          @include to(1440px) {
+            font-size: 44px;
+          }
         }
         .description {
           font-weight: normal;
@@ -298,6 +398,9 @@
           letter-spacing: 0.01em;
           text-transform: uppercase;
           color: #2d2d2d;
+          @include to(1440px) {
+            font-size: 12px;
+          }
         }
         &:last-child {
           margin-right: 0;
@@ -319,10 +422,13 @@
   padding: vw(150, 1920) vw(100, 1920) vw(150, 1920) vw(397, 1920);
   background: #2d2d2d;
   position: relative;
+  @include to(1440px) {
+    padding: vw(100, 1440) vw(70, 1440) vw(100, 1440) vw(281, 1440);
+  }
   .news-sticker {
     position: absolute;
     left: 0;
-    top: 150px;
+    top: vw(150, 1920);
     width: 270px;
     height: 65px;
     background: $green;
@@ -331,25 +437,40 @@
     padding-left: 100px;
     display: flex;
     align-items: center;
+    @include to(1440px) {
+      top: vw(100, 1440);
+      width: 190px;
+      height: 50px;
+      padding-left: 70px;
+    }
     h5 {
       font-weight: normal;
       font-size: 18px;
       line-height: 140%;
       text-transform: uppercase;
       color: #ffffff;
+      @include to(1440px) {
+        font-size: 14px;
+      }
     }
   }
   .news-title {
     margin-bottom: 50px;
-    padding-right: 100px;
+    // padding-right: 100px;
     display: flex;
     justify-content: space-between;
+    @include to(1440px) {
+      margin-bottom: 40px;
+    }
     h2 {
       font-weight: normal;
       font-size: 64px;
       line-height: 120%;
       text-transform: uppercase;
       color: #ffffff;
+      @include to(1440px) {
+        font-size: 44px;
+      }
     }
     .news-swiper {
       .swiper-slide {
@@ -361,6 +482,9 @@
     display: flex;
     justify-content: space-between;
     width: 237px;
+    @include to(1440px) {
+      width: 171px;
+    }
     .swiper-button-arrow {
       width: 90px;
       height: 56px;
@@ -368,6 +492,10 @@
       stroke-width: 2px;
       cursor: pointer;
       transition: $transition-fuction;
+      @include to(1440px) {
+        width: 65px;
+        height: 40px;
+      }
       &:hover {
         @include from(992px) {
           stroke: $green;
@@ -380,18 +508,11 @@
   width: 100%;
   height: 100%;
   position: relative;
-
   .swiper-slide {
     font-size: 18px;
-    // display: flex;
-    // -webkit-box-pack: center;
-    // -ms-flex-pack: center;
-    // -webkit-justify-content: center;
-    // justify-content: center;
-    // -webkit-box-align: center;
-    // -ms-flex-align: center;
-    // -webkit-align-items: center;
-    // align-items: center;
+    @include to(1440px) {
+      font-size: 14px;
+    }
     a {
       text-decoration: none;
     }
@@ -401,6 +522,9 @@
       height: 400px;
       @include to(1920px) {
         height: 300px;
+      }
+      @include to(1440px) {
+        height: 214px;
       }
       img {
         transition: all 0.5s ease;
@@ -421,6 +545,10 @@
       text-transform: uppercase;
       color: #cbd2c5;
       margin: 50px 0 15px 0;
+      @include to(1440px) {
+        font-size: 14px;
+        margin: 40px 0 10px 0;
+      }
     }
     .description {
       display: flex;
@@ -430,13 +558,16 @@
         font-size: 24px;
         line-height: 130%;
         color: #f0f0f0;
-        width: 400px;
-        display: block;
+        // width: 400px;
+        width: 78%;
         display: -webkit-box;
         -webkit-line-clamp: 3; /* количество строк */
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+        @include to(1440px) {
+          font-size: 17px;
+        }
       }
     }
   }
@@ -469,6 +600,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @include to(1440px) {
+      width: 12px;
+      height: 11px;
+    }
   }
   .button--skoll-arrow {
     overflow: hidden;
@@ -479,6 +614,10 @@
     height: 65px;
     overflow: hidden;
     border-radius: 50%;
+    @include to(1440px) {
+      width: 50px;
+      height: 50px;
+    }
     &::before {
       content: '';
       background: $green;
@@ -506,10 +645,13 @@
   padding: vw(150, 1920) vw(100, 1920) vw(150, 1920) vw(397, 1920);
   background: #f0f0f0;
   position: relative;
+  @include to(1440px) {
+    padding: vw(100, 1440) vw(70, 1440) vw(100, 1440) vw(281, 1440);
+  }
   .gallery-sticker {
     position: absolute;
     left: 0;
-    top: 150px;
+    top: vw(150, 1920);
     width: 270px;
     height: 65px;
     background: #2d2d2d;
@@ -518,36 +660,49 @@
     padding-left: 100px;
     display: flex;
     align-items: center;
+    @include to(1440px) {
+      top: vw(100, 1440);
+      width: 190px;
+      height: 50px;
+      padding-left: 70px;
+    }
     h5 {
       font-weight: normal;
       font-size: 18px;
       line-height: 140%;
       text-transform: uppercase;
       color: #ffffff;
+      @include to(1440px) {
+        font-size: 14px;
+      }
     }
   }
   .gallery-title {
     margin-bottom: 50px;
-    padding-right: 100px;
+    // padding-right: 100px;
     display: flex;
     justify-content: space-between;
+    @include to(1440px) {
+      margin-bottom: 40px;
+    }
     h2 {
       font-weight: normal;
       font-size: 64px;
       line-height: 120%;
       text-transform: uppercase;
       color: #2d2d2d;
+      @include to(1440px) {
+        font-size: 44px;
+      }
     }
-    // .news-swiper {
-    //   .swiper-slide {
-    //     width: 30%;
-    //   }
-    // }
   }
   .swiper-container-arrow {
     display: flex;
     justify-content: space-between;
     width: 237px;
+    @include to(1440px) {
+      width: 171px;
+    }
     .swiper-arrow {
       width: 90px;
       height: 56px;
@@ -555,6 +710,10 @@
       cursor: pointer;
       stroke-width: 2px;
       transition: $transition-fuction;
+      @include to(1440px) {
+        width: 65px;
+        height: 40px;
+      }
       &:hover {
         @include from(992px) {
           stroke: $green;
@@ -588,6 +747,9 @@
         @include to(1920px) {
           height: 650px;
         }
+        @include to(1440px) {
+          height: 428px;
+        }
         img {
           transition: all 0.5s ease;
           // transform: scale(1);
@@ -620,17 +782,20 @@
       box-sizing: content-box;
     }
     .swiper-slide {
-      width: 69% !important;
+      width: 79% !important;
       border-radius: 15px 100px 15px 100px;
     }
     .swiper-slide.vertical {
-      width: 31% !important;
+      width: 38% !important;
       .swiper-slide-img {
         border-radius: 100px 0 100px 0;
         width: 100%;
         height: 750px;
         @include to(1920px) {
           height: 650px;
+        }
+        @include to(1440px) {
+          height: 428px;
         }
       }
     }

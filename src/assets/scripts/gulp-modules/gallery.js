@@ -21,7 +21,7 @@ function sideSwitchArrow(swiper, arrow, container) {
   document.body.append(arrow);
   container.style.cursor = 'none';
   arrow.style.cursor = 'none';
-  arrow.style.zIndex = 10;
+  arrow.style.zIndex = 100;
   arrow.__proto__.hide = function () {
     this.style.opacity = '0';
     this.style.pointerEvents = 'none';
