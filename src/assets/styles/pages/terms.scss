@@ -6,7 +6,12 @@
     // background: #ffffff;
     // border-radius: 30px;
     padding: 50px 60px;
-
+    @include to(1440px) {
+      padding: 38px 50px;
+    }
+    @include to(992px) {
+      padding: 31px 40px;
+    }
     .accordion-arrow {
       width: 65px;
       height: 65px;
@@ -14,6 +19,14 @@
       border-radius: 50%;
       position: relative;
       top: 0;
+      @include to(1440px) {
+        width: 50px;
+        height: 50px;
+      }
+      @include to(992px) {
+        width: 45px;
+        height: 45px;
+      }
       .icon--terms-arrow {
         width: 10px;
         height: 10px;
@@ -22,6 +35,10 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) rotate(180deg);
+        @include to(1440px) {
+          width: 8px;
+          height: 4px;
+        }
       }
     }
   }
@@ -34,6 +51,9 @@
       .accordion-toggle {
         border-bottom: none;
         padding-bottom: 30px;
+        @include to(1440px) {
+          padding-bottom: 20px;
+        }
       }
       .accordion-arrow {
         background: $black;
@@ -45,29 +65,64 @@
   }
   .accordion-panel {
     padding: 0 60px 80px;
+    @include to(1440px) {
+      padding: 0 50px 60px;
+    }
+    @include to(992px) {
+      padding: 0 40px 50px;
+    }
     &__info {
       display: flex;
       justify-content: space-between;
       margin-bottom: 80px;
+      @include to(1440px) {
+        margin-bottom: 60px;
+      }
+      @include to(992px) {
+        margin-bottom: 50px;
+      }
     }
     &__info + .calculator {
       margin-top: -30px;
+      @include to(1440px) {
+        margin-top: -20px;
+      }
     }
     &__text {
       width: 47.5%;
       &--title {
-        font-size: 24px;
+        font-size: 28px;
         line-height: 150%;
         letter-spacing: 0.01em;
         color: #2d2d2d;
-        margin-bottom: 5px;
+        margin-bottom: 20px;
+        @include to(1440px) {
+          font-size: 22px;
+          margin-bottom: 10px;
+        }
+        @include to(992px) {
+          font-size: 18px;
+          margin-bottom: 20px;
+        }
       }
       &--description {
         font-size: 20px;
         line-height: 150%;
         color: #435055;
+        @include to(1440px) {
+          font-size: 14px;
+        }
+        @include to(992px) {
+          font-size: 12px;
+        }
         & + .accordion-panel__text--title {
           margin-top: 40px;
+          @include to(1440px) {
+            margin-top: 30px;
+          }
+          @include to(992px) {
+            margin-top: 20px;
+          }
         }
       }
     }
@@ -83,6 +138,13 @@
   height: 1px;
   margin-top: -30px;
   margin-bottom: 50px;
+  @include to(1440px) {
+    margin-top: -20px;
+    margin-bottom: 40px;
+  }
+  @include to(992px) {
+    display: none;
+  }
 }
 
 .accordion-panel__consultation {
@@ -97,11 +159,18 @@
       text-transform: uppercase;
       color: #2d2d2d;
       margin-bottom: 20px;
+      @include to(1440px) {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
     }
     .connection__person {
       justify-content: flex-start;
       &--img {
         margin-right: 20px;
+        @include to(1440px) {
+          margin-right: 10px;
+        }
       }
     }
   }
@@ -115,11 +184,24 @@
       line-height: 150%;
       color: #435055;
       margin-bottom: 25px;
+      @include to(1440px) {
+        font-size: 14px;
+        margin-bottom: 17px;
+      }
+      @include to(992px) {
+        font-size: 12px;
+      }
       a {
         text-decoration: none;
         font-size: 20px;
         line-height: 150%;
         color: #435055;
+        @include to(1440px) {
+          font-size: 14px;
+        }
+        @include to(992px) {
+          font-size: 12px;
+        }
       }
     }
   }
@@ -133,13 +215,31 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 80px;
+  @include to(1440px) {
+    margin-bottom: 60px;
+  }
+  @include to(992px) {
+    margin-bottom: 50px;
+  }
   &__calculations {
     width: 47.5%;
     padding: 50px 0 50px 45px;
+    @include to(1440px) {
+      padding: 40px 0 40px 35px;
+    }
+    @include to(992px) {
+      padding: 30px 0 30px 30px;
+    }
   }
   &__result {
     width: 47.5%;
     padding: 50px 45px 50px 97px;
+    @include to(1440px) {
+      padding: 40px 35px 40px 56px;
+    }
+    @include to(992px) {
+      padding: 30px;
+    }
   }
 }
 .calculator__result {
@@ -153,6 +253,12 @@
     letter-spacing: 0.01em;
     color: #cbd2c5;
     margin-bottom: 15px;
+    @include to(1440px) {
+      font-size: 14px;
+    }
+    @include to(992px) {
+      font-size: 11px;
+    }
   }
   &--sum-month {
     font-weight: 500;
@@ -161,6 +267,14 @@
     text-transform: uppercase;
     color: #ffffff;
     margin-bottom: 50px;
+    @include to(1440px) {
+      font-size: 44px;
+      margin-bottom: 30px;
+    }
+    @include to(992px) {
+      font-size: 40px;
+      margin-bottom: 40px;
+    }
   }
   &--sum {
     font-weight: 500;
@@ -168,6 +282,12 @@
     line-height: 120%;
     text-transform: uppercase;
     color: #ffffff;
+    @include to(1440px) {
+      font-size: 28px;
+    }
+    @include to(992px) {
+      font-size: 22px;
+    }
   }
 }
 
@@ -179,6 +299,14 @@
   color: #2d2d2d;
   margin-bottom: 20px;
   position: relative;
+  @include to(1440px) {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  @include to(992px) {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
   &::before {
     content: '';
     display: inline-block;
@@ -187,6 +315,11 @@
     border-radius: 50%;
     background: $green;
     margin: 4px 15px 4px 0;
+    @include to(1440px) {
+      width: 4px;
+      height: 4px;
+      margin: 2px 10px 2px 0;
+    }
   }
 }
 
@@ -195,10 +328,14 @@
   display: flex;
   flex-direction: column;
   padding-top: 30px;
+
   &-input {
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
+    @include to(1440px) {
+      margin-top: 30px;
+    }
 
     &:first-child {
       margin-top: 0;
@@ -213,6 +350,13 @@
       color: #2d2d2d;
       text-transform: none;
       letter-spacing: 0;
+      @include to(1440px) {
+        font-size: 14px;
+      }
+      @include to(992px) {
+        font-size: 12px;
+        width: 60%;
+      }
     }
     input {
       width: 28%;
@@ -223,6 +367,12 @@
       line-height: 140%;
       text-align: center;
       color: #2d2d2d;
+      @include to(1440px) {
+        font-size: 14px;
+      }
+      @include to(992px) {
+        font-size: 12px;
+      }
     }
   }
   &-range {
@@ -234,6 +384,9 @@
       line-height: 130%;
       color: #6b6b6b;
       padding-top: 5px;
+      @include to(1440px) {
+        font-size: 10px;
+      }
     }
     .input-range {
       -webkit-appearance: none;
@@ -268,4 +421,7 @@
 }
 .calculator__form-input + .calculator__form-range {
   margin-top: 14px;
+  @include to(1440px) {
+    margin-top: 10px;
+  }
 }

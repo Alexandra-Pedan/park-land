@@ -27,9 +27,10 @@
       include ../components/lang/lang.pug
       button(type='button').nav__call-btn.js-call
         span.nav__call-btn-text замовити дзвінок
-      
+      +svg('phone').header-mobile-call.js-mobile-call
       a(href='#').realty__link
         span.realty__text обрати нерухомість
+        +svg('key')
       .menu.js-menu-close
         span.menu__text меню
         .menu__btn
@@ -42,7 +43,7 @@
       .menu-content-section-title
         h5.title-number 00
         h2.title головна
-      ul.menu-list 
+      ul.menu-list.menu-list--main 
         li
           a(href="index.html") Головна
         li

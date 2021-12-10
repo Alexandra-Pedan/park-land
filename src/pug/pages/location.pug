@@ -23,7 +23,7 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/scroll-down.js')
-
+  script(defer src='./assets/scripts/footer.js')
 block arrow 
   +svg('scroll-down').js-scroll-down
 block content
@@ -57,7 +57,7 @@ block content
         p Безліч гуртків та спортивних секцій, що створені як на базі шкіл, так і інших культурно-просвітницьких центрів, забезпечать ваших дітей корисним та здоровим дозвіллям, що є надзвичайно важливим в сучасному міському житті
       .service__img
         img(src="./assets/images/location3.jpg", alt="")
-      .commercial-link
+      .commercial-link.service__link
         .commercial-link__text дізнайтеся більше про  локацію і інфраструктуру біля жк parkland
         a(href='#').realty__link
           span.realty__text інфраструктура

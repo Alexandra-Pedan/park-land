@@ -4,11 +4,17 @@
   justify-content: space-between;
   margin-bottom: 50px;
   &__text {
-    width: 48%;
+    width: 49%;
     font-size: 38px;
     line-height: 150%;
     letter-spacing: 0.01em;
     text-transform: uppercase;
     color: #343434;
+    @include to(1440px) {
+      font-size: 28px;
+    }
+    @include to(992px) {
+      font-size: 24px;
+    }
   }
 }

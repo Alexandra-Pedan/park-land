@@ -12,6 +12,9 @@
     height: 45px;
     right: vw(70, 1440);
   }
+  @include to(992px) {
+    display: none;
+  }
 }
 .scroll-down {
   transform: scale(0);
@@ -32,6 +35,9 @@
   height: var(--header-h);
   @include to(1440px) {
     padding: 0 vw(70, 1440);
+  }
+  @include to(992px) {
+    padding: 0 vw(40, 768);
   }
 }
 .logo__img {
@@ -59,6 +65,9 @@
   @include to(1440px) {
     margin-right: 45px;
     font-size: 16px;
+  }
+  @include to(992px) {
+    display: none;
   }
   .nav__tel-text {
     display: inline-block;
@@ -123,6 +132,9 @@
   white-space: nowrap;
   @include to(1440px) {
     font-size: 12px;
+  }
+  @include to(992px) {
+    display: none;
   }
   .nav__call-btn-text {
     display: inline-block;
@@ -207,8 +219,25 @@
     height: 50px;
     font-size: 12px;
   }
+  @include to(992px) {
+    width: 45px;
+    height: 45px;
+    margin-right: 30px;
+  }
+  .icon--key {
+    display: none;
+    width: 45px;
+    height: 45px;
+    fill: none;
+    @include to(992px) {
+      display: inline-block;
+    }
+  }
   .realty__text {
     position: relative;
+    @include to(992px) {
+      display: none;
+    }
   }
   &:hover {
     background-color: $black;
@@ -226,6 +255,9 @@
     position: absolute;
     top: 0;
     left: 0;
+    @include to(992px) {
+      display: none;
+    }
   }
   // &::after {
   //   content: '';
@@ -277,6 +309,10 @@
       width: 50px;
       height: 50px;
     }
+    @include to(992px) {
+      width: 45px;
+      height: 45px;
+    }
     span {
       position: relative;
     }
@@ -290,6 +326,10 @@
       @include to(1440px) {
         width: 12px;
         height: 5px;
+      }
+      @include to(992px) {
+        width: 11px;
+        height: 4px;
       }
     }
     .icon--close {
@@ -323,5 +363,84 @@
     .menu__btn::before {
       transform: translate3d(0, 100%, 0);
     }
+  }
+}
+
+.header-mobile-call {
+  display: none;
+  width: 45px;
+  height: 45px;
+  margin-right: 30px;
+  fill: none;
+  @include to(992px) {
+    display: inline-block;
+  }
+}
+
+.form-header-call {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  z-index: 190;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  &.sideform-active {
+    opacity: 1;
+    visibility: visible;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0 80px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  li {
+    width: 100%;
+    height: 60px;
+    background: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 100%;
+    color: #2d2d2d;
+    a {
+      width: 100%;
+      height: 60px;
+      font-size: 15px;
+      line-height: 100%;
+      color: #2d2d2d;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  button {
+    width: 100%;
+    height: 60px;
+    border: none;
+    background: none;
+    font-family: $default-font;
+    padding: 0;
+    font-size: 15px;
+    line-height: 100%;
+    color: #2d2d2d;
+  }
+  .cancel {
+    background: #8bb514;
+    color: $white;
   }
 }

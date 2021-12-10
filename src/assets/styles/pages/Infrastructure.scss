@@ -5,10 +5,18 @@
   @include to(1920px) {
     height: 630px;
   }
+  @include to(1440px) {
+    height: 480px;
+    margin-bottom: 0;
+  }
+
   #map {
     height: 730px;
     @include to(1920px) {
       height: 630px;
+    }
+    @include to(1440px) {
+      height: 480px;
     }
   }
 }
@@ -17,29 +25,53 @@
 }
 .infrastructure__title {
   margin-bottom: 50px;
+  @include to(1440px) {
+    margin-bottom: 40px;
+  }
   h2 {
     font-size: 38px;
     line-height: 150%;
     letter-spacing: 0.01em;
     text-transform: uppercase;
     color: #343434;
+    @include to(1440px) {
+      font-size: 28px;
+    }
+    @include to(992px) {
+      font-size: 23px;
+    }
   }
 }
 .infrastructure {
   padding: 150px vw(397, 1920) 0 vw(397, 1920);
+  @include to(1440px) {
+    padding: 100px vw(281, 1440) 0 vw(281, 1440);
+  }
+  @include to(992px) {
+    padding: 100px vw(40, 768) 0 vw(40, 768);
+  }
 }
 .infrastructure__cart {
   display: flex;
   width: 100%;
   margin-bottom: 150px;
+  @include to(1440px) {
+    margin-bottom: 100px;
+  }
   &-title {
     width: 26%;
+    @include to(1440px) {
+      width: 23%;
+    }
     h4 {
       font-size: 28px;
       line-height: 150%;
       letter-spacing: 0.01em;
       text-transform: uppercase;
       color: #343434;
+      @include to(1440px) {
+        font-size: 20px;
+      }
     }
   }
   &-description {
@@ -50,12 +82,17 @@
 }
 .infrastructure__cart-text {
   width: 64%;
-
+  @include to(992px) {
+    width: 100%;
+  }
   p {
     font-size: 20px;
     line-height: 150%;
     color: #435055;
     margin-bottom: 30px;
+    @include to(1440px) {
+      font-size: 14px;
+    }
   }
 }
 .infrastructure__cart-img {
@@ -72,6 +109,13 @@
   flex-wrap: wrap;
   height: 275px;
   margin-bottom: 50px;
+  @include to(1440px) {
+    margin-bottom: 40px;
+    height: 210px;
+  }
+  @include to(992px) {
+    height: 224px;
+  }
 }
 .infrastructure__cart--item {
   display: flex;
@@ -79,7 +123,9 @@
   justify-content: flex-start;
   width: 50%;
   margin-bottom: 40px;
-
+  @include to(1440px) {
+    margin-bottom: 30px;
+  }
   .item__number {
     width: 65px;
     height: 65px;
@@ -95,12 +141,21 @@
     align-items: center;
     justify-content: center;
     margin-right: 30px;
+    @include to(1440px) {
+      width: 50px;
+      height: 50px;
+      font-size: 19px;
+      margin-right: 15px;
+    }
   }
   .item__text {
     font-size: 20px;
     line-height: 150%;
     color: #435055;
     width: 67%;
+    @include to(1440px) {
+      font-size: 14px;
+    }
   }
 }
 .infrastructure__cart--item:nth-child(3),
@@ -115,14 +170,23 @@
     @include to(1920px) {
       height: 460px;
     }
+    @include to(1440px) {
+      height: 328px;
+    }
   }
 }
 
 .designations {
   position: absolute;
-  top: 80px;
+  top: 50%;
+  transform: translateY(-50%);
   left: vw(100, 1920);
-
+  @include to(1440px) {
+    left: vw(70, 1440);
+  }
+  @include to(992px) {
+    left: vw(40, 768);
+  }
   background: #ffffff;
   &__list {
     display: flex;
@@ -138,10 +202,19 @@
     color: #2d2d2d;
     cursor: pointer;
     transition: $transition-fuction;
+    @include to(1440px) {
+      padding: 16px 30px;
+      font-size: 14px;
+    }
     .marker {
       width: 23px;
       height: 20px;
       margin-right: 20px;
+      @include to(1440px) {
+        width: 17px;
+        height: 15px;
+        margin-right: 15px;
+      }
     }
     &:hover {
       @include from(992px) {
@@ -154,4 +227,7 @@
   background: $green;
   padding-left: 60px;
   color: #ffffff;
+  @include to(1440px) {
+    padding-left: 40px;
+  }
 }

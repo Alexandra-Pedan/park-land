@@ -11,6 +11,10 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/scroll-down.js')
+  script(defer src='./assets/scripts/footer.js')
+block arrow 
+    +svg('scroll-down').js-scroll-down
 block content
   section.main-content 
     .main-content-description 
@@ -181,7 +185,7 @@ block content
         .swiper-slide
           .swiper-slide-img
             img(src="./assets/images/main-gallery3.jpg", alt="")
-
+    
 
 
 

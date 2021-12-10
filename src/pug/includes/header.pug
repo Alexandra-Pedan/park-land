@@ -23,9 +23,10 @@ header.header.header-js#header
     include ../components/lang/lang.pug
     button(type='button').nav__call-btn.js-call
       span.nav__call-btn-text замовити дзвінок
-    
+    +svg('phone').header-mobile-call.js-mobile-call
     a(href='#').realty__link
       span.realty__text обрати нерухомість
+      +svg('key')
     .menu.js-menu-open
       span.menu__text меню
       .menu__btn

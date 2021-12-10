@@ -23,7 +23,7 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/scroll-down.js')
-
+  script(defer src='./assets/scripts/footer.js')
 block arrow 
   +svg('scroll-down').js-scroll-down                          
 block content
@@ -39,16 +39,16 @@ block content
         .post-service__img
           img(src="./assets/images/investor.jpg", alt="")
         ul.post-service__list
-          li.post-service__item
+          li.post-service__item.investor__item
             .post-service__item--number 1
             .post-service__item--text Ви не витрачаєте свій час на підбір орендарів, на вирішення всіх поточних питань чи на обслуговування об'єкта. Цим займаються наші менеджери. Ваша задача - тільки повідомити, куди зручно отримати свій дохід
           li.post-service__item
             .post-service__item--number 2
             .post-service__item--text Рентабельні інвестиції з окупністю до 12 років
-          li.post-service__item
+          li.post-service__item.investor__item
             .post-service__item--number 3
             .post-service__item--text Пасивний прибуток від здачі квартири від $3000 річних
-          li.post-service__item
+          li.post-service__item.investor__item
             .post-service__item--number 4
             .post-service__item--text Пасивний прибуток від здачі комерції від $8000 річних
           li.post-service__item
@@ -75,7 +75,7 @@ block content
               .connection__person--position менеджер з продажу
           a(href="tel:+380505008584").connection__tel + 38 (050) 500-85-84
           a(href="mailto:parkland.uz@gmail.com").connection__tel parkland.uz@gmail.com
-          .sale__link
+          .sale__link.service__link
             a(href='#').realty__link.js-call
               span.realty__text замовити дзвінок 
 

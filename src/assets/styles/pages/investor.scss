@@ -15,11 +15,20 @@
       text-transform: uppercase;
       color: #2d2d2d;
       margin-bottom: 10px;
+      @include to(1440px) {
+        font-size: 28px;
+      }
+      @include to(992px) {
+        font-size: 24px;
+      }
     }
     &__person {
       justify-content: flex-start;
       &--img {
         margin-right: 20px;
+        @include to(992px) {
+          margin-right: 10px;
+        }
       }
     }
     .sale__link {
@@ -34,16 +43,34 @@
   text-transform: uppercase;
   color: #2d2d2d;
   margin-bottom: 10px;
+  @include to(1440px) {
+    font-size: 28px;
+  }
+  @include to(992px) {
+    font-size: 24px;
+  }
 }
 
 .sale__contacts--adress {
   font-size: 20px;
   line-height: 150%;
   color: #435055;
+  @include to(1440px) {
+    font-size: 14px;
+  }
+  @include to(992px) {
+    font-size: 16px;
+  }
 }
 
 .sale__contacts--link {
   margin: 30px 0 60px 0;
+  @include to(1440px) {
+    margin: 20px 0 50px 0;
+  }
+  @include to(992px) {
+    margin: 16px 0 36px 0;
+  }
   a {
     width: 290px;
     height: 65px;
@@ -59,5 +86,19 @@
     color: #2d2d2d;
     border: 1px solid #79b43e;
     border-radius: 1000px;
+    @include to(1440px) {
+      width: 210px;
+      height: 50px;
+      font-size: 12px;
+    }
+    // @include to(992px) {
+    //   width: 210px;
+    //   height: 50px;
+    //   font-size: 12px;
+    // }
   }
+}
+
+.post-service__item.investor__item {
+  align-items: flex-start;
 }

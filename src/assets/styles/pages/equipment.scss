@@ -7,8 +7,12 @@
     overflow: hidden;
     padding-bottom: 10px;
     margin-bottom: 40px;
+    @include to(1440px) {
+      margin-bottom: 30px;
+    }
     &.is-open {
       border-bottom: none;
+      // margin-bottom: 0;
       .accordion-toggle {
         border-bottom: 1px solid $green;
         padding-bottom: 10px;
@@ -56,6 +60,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include to(1440px) {
+      font-size: 19px;
+    }
     .is-open > & {
       .plus::before {
         height: 0;
@@ -70,6 +77,10 @@
       line-height: 150%;
       color: #435055;
       padding-top: 20px;
+      @include to(1440px) {
+        font-size: 16px;
+        padding-top: 10px;
+      }
     }
   }
 
@@ -89,12 +100,19 @@
 
 .accordion-link {
   margin: 30px 0 40px 0;
+  @include to(1440px) {
+    margin: 20px 0 0 0;
+  }
 }
 
 .accordion-plus {
   position: relative;
   width: 15px;
   height: 15px;
+  @include to(1440px) {
+    width: 11px;
+    height: 11px;
+  }
 }
 .plus {
   position: absolute;
@@ -102,6 +120,11 @@
   top: 0px;
   width: 15px;
   height: 15px;
+  @include to(1440px) {
+    width: 11px;
+    height: 11px;
+    right: -5.5px;
+  }
   &:before,
   &:after {
     position: absolute;
@@ -111,6 +134,9 @@
     width: 1px;
     background-color: #333;
     transition: $transition-fuction;
+    @include to(1440px) {
+      height: 11px;
+    }
   }
   &:before {
     transform: rotate(0deg);
@@ -123,4 +149,7 @@
 .equipment-img {
   height: 650px;
   background: $black;
+  @include to(1440px) {
+    height: 470px;
+  }
 }

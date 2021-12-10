@@ -25,7 +25,8 @@ block scripts
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/terms.js')
   script(defer src='./assets/scripts/scroll-down.js')
-
+  script(defer src='./assets/scripts/footer.js')
+  script(defer src='./assets/scripts/calculator.js')
 block arrow 
   +svg('scroll-down').js-scroll-down
 block content
@@ -64,7 +65,7 @@ block content
                   .accordion-panel__question Щоб дізнатись більше про вашу знижку телефонуйте
                     a(href="tel:+380505008584") + 38 (050) 500-85-84 
                     | або залишайте заявку на дзвінок
-                  .post-service__link 
+                  .post-service__link.service__link 
                     a(href='#').realty__link.js-call
                       span.realty__text замовити дзвінок 
 
@@ -128,7 +129,7 @@ block content
                   .accordion-panel__question Щоб дізнатись більше про вашу знижку телефонуйте
                     a(href="tel:+380505008584") + 38 (050) 500-85-84 
                     | або залишайте заявку на дзвінок
-                  .post-service__link 
+                  .post-service__link.service__link 
                     a(href='#').realty__link.js-call
                       span.realty__text замовити дзвінок 
 

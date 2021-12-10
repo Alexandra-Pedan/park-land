@@ -14,6 +14,15 @@
     width: 110px;
     height: 110px;
     margin-right: 40px;
+    @include to(1440px) {
+      width: 80px;
+      height: 80px;
+      margin-right: 30px;
+    }
+    @include to(992px) {
+      width: 85px;
+      height: 85px;
+    }
   }
   p {
     font-size: 28px;
@@ -22,6 +31,12 @@
     text-transform: uppercase;
     color: #2d2d2d;
     width: 70%;
+    @include to(1440px) {
+      font-size: 20px;
+    }
+    @include to(992px) {
+      font-size: 18px;
+    }
   }
 }
 
@@ -29,6 +44,12 @@
   display: flex;
   justify-content: space-between;
   width: 137px;
+  @include to(1440px) {
+    width: 100px;
+  }
+  @include to(992px) {
+    width: 92px;
+  }
   .swiper-button-arrow {
     width: 52px;
     height: 30px;
@@ -36,6 +57,14 @@
     stroke-width: 2px;
     cursor: pointer;
     transition: $transition-fuction;
+    @include to(1440px) {
+      width: 35px;
+      height: 20px;
+    }
+    @include to(992px) {
+      width: 31px;
+      height: 18px;
+    }
     &:hover {
       @include from(992px) {
         stroke: $green;
@@ -49,6 +78,12 @@
 }
 .residential {
   margin-top: 50px;
+  @include to(1440px) {
+    margin-top: 40px;
+  }
+  @include to(992px) {
+    margin-top: 30px;
+  }
 }
 .residential__title {
   font-size: 28px;
@@ -56,6 +91,12 @@
   letter-spacing: 0.01em;
   text-transform: uppercase;
   color: #2d2d2d;
+  @include to(1440px) {
+    font-size: 20px;
+  }
+  @include to(992px) {
+    font-size: 22px;
+  }
 }
 .swiper-residential {
   overflow: hidden;
@@ -69,6 +110,12 @@
       letter-spacing: 0.01em;
       text-transform: uppercase;
       color: #2d2d2d;
+      @include to(1440px) {
+        font-size: 14px;
+      }
+      @include to(992px) {
+        font-size: 12px;
+      }
       &:hover {
         img {
           transform: scale(1.1);
@@ -76,6 +123,12 @@
       }
       .residential-slide__title {
         margin-top: 15px;
+        @include to(1440px) {
+          margin-top: 20px;
+        }
+        @include to(992px) {
+          margin-top: 10px;
+        }
       }
       .residential-slide__img {
         overflow: hidden;
@@ -91,6 +144,9 @@
   display: flex;
   flex-direction: column;
   margin-top: 150px;
+  @include to(1440px) {
+    margin-top: 100px;
+  }
   &__title {
     font-size: 38px;
     line-height: 150%;
@@ -98,6 +154,12 @@
     text-transform: uppercase;
     color: #343434;
     margin-bottom: 20px;
+    @include to(1440px) {
+      font-size: 28px;
+    }
+    @include to(992px) {
+      font-size: 23px;
+    }
   }
   &__reviews {
     display: flex;
@@ -107,6 +169,12 @@
       letter-spacing: 0.01em;
       text-transform: uppercase;
       color: #2d2d2d;
+      @include to(1440px) {
+        font-size: 20px;
+      }
+      @include to(992px) {
+        font-size: 18px;
+      }
     }
     a {
       color: $green;
@@ -114,12 +182,21 @@
       line-height: 150%;
       letter-spacing: 0.01em;
       text-transform: uppercase;
+      @include to(1440px) {
+        font-size: 20px;
+      }
+      @include to(992px) {
+        font-size: 18px;
+      }
     }
   }
 }
 
 .service.developer-object {
   margin-top: 150px;
+  @include to(1440px) {
+    margin-top: 100px;
+  }
 }
 
 .developer-advertising__container {
@@ -135,12 +212,21 @@
     letter-spacing: 0.01em;
     text-transform: uppercase;
     color: #343434;
+    @include to(1440px) {
+      font-size: 20px;
+    }
+    @include to(992px) {
+      font-size: 18px;
+    }
   }
   &__text--little {
     width: 47.5%;
     font-size: 20px;
     line-height: 150%;
     color: #435055;
+    @include to(1440px) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -151,23 +237,46 @@
   letter-spacing: 0.01em;
   text-transform: uppercase;
   color: #343434;
+  @include to(1440px) {
+    font-size: 28px;
+    padding-top: 100px;
+  }
+  @include to(992px) {
+    font-size: 23px;
+  }
 }
 .developer-bonuses {
   margin-top: 150px;
+  @include to(1440px) {
+    margin-top: 100px;
+  }
   .post-service__content {
     flex-direction: row-reverse;
     margin-bottom: 50px;
+    @include to(1440px) {
+      margin-bottom: 30px;
+    }
+    @include to(992px) {
+      margin-bottom: 50px;
+    }
   }
 }
 
 .developer-awards {
   margin-top: 150px;
+  @include to(1440px) {
+    margin-top: 100px;
+  }
   &__title {
     font-size: 38px;
     line-height: 150%;
     letter-spacing: 0.01em;
     text-transform: uppercase;
     color: #343434;
+    @include to(1440px) {
+      font-size: 28px;
+      width: 95%;
+    }
   }
   &__list {
     margin-top: 30px;
@@ -177,8 +286,10 @@
   &__item {
     margin-right: 20px;
     width: 13.4%;
-    height: 12vh;
-
+    height: 14vh;
+    @include to(1440px) {
+      margin-right: 15px;
+    }
     &:last-child {
       margin-right: 0;
     }
@@ -194,6 +305,12 @@
   left: 20px;
   height: calc(100% - 40px);
   overflow-y: scroll;
+  @include to(1440px) {
+    padding: 15px;
+    top: 15px;
+    left: 15px;
+    height: calc(100% - 30px);
+  }
 }
 ::-webkit-scrollbar {
   width: 3px;
@@ -212,6 +329,9 @@
   box-shadow: 1px 1px 15px #d6d6d6;
   margin-bottom: 10px;
   height: 110px;
+  @include to(1440px) {
+    height: 80px;
+  }
   &:hover {
     @include from(992px) {
       .our-projects__link {
@@ -246,6 +366,9 @@
     flex-direction: column;
     justify-content: center;
     padding-left: 20px;
+    @include to(1440px) {
+      padding-left: 15px;
+    }
     .name {
       font-size: 16px;
       line-height: 120%;
@@ -253,6 +376,10 @@
       text-transform: uppercase;
       color: #2d2d2d;
       margin-bottom: 5px;
+      @include to(1440px) {
+        font-size: 14px;
+        margin-bottom: 3px;
+      }
     }
     .readiness {
       font-weight: 500;
@@ -260,6 +387,9 @@
       line-height: 150%;
       letter-spacing: 0.01em;
       color: #435055;
+      @include to(1440px) {
+        font-size: 11px;
+      }
     }
     .price {
       font-weight: 500;
@@ -267,6 +397,9 @@
       line-height: 150%;
       letter-spacing: 0.01em;
       color: #435055;
+      @include to(1440px) {
+        font-size: 11px;
+      }
     }
   }
 }
