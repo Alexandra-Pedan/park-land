@@ -25,6 +25,9 @@
     @include to(1440px) {
       font-size: 14px;
     }
+    @include to(992px) {
+      font-size: 12px;
+    }
   }
 }
 .building-content__info {
@@ -38,6 +41,11 @@
       width: 15px;
       height: 15px;
     }
+    @include to(992px) {
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+    }
   }
   p {
     font-size: 18px;
@@ -48,6 +56,9 @@
     @include to(1440px) {
       font-size: 14px;
     }
+    @include to(992px) {
+      font-size: 12px;
+    }
   }
 }
 .news-content__img.building-content__img {
@@ -56,6 +67,9 @@
   position: relative;
   @include to(1440px) {
     margin-bottom: 15px;
+  }
+  @include to(992px) {
+    margin-bottom: 10px;
   }
 }
 .building-content__item {
@@ -106,6 +120,10 @@
   z-index: 110;
   pointer-events: none;
   background: #2d2d2d;
+  @include to(992px) {
+    display: flex;
+    align-items: center;
+  }
   &.build-popup-active {
     visibility: visible;
     opacity: 1;
@@ -114,9 +132,12 @@
 }
 .building-popup__container {
   // position: relative;
-  padding: vw(150, 1920) vw(397, 1920);
+  width: 100%;
   @include to(1440px) {
     padding: vw(100, 1440) vw(281, 1440);
+  }
+  @include to(992px) {
+    padding: 0 vw(40, 768);
   }
 }
 .building-sticker {
@@ -136,6 +157,9 @@
     width: 190px;
     height: 50px;
     padding-left: 70px;
+  }
+  @include to(992px) {
+    display: none;
   }
   h5 {
     font-weight: normal;
@@ -170,12 +194,21 @@
     height: 50px;
     top: 30px;
   }
+  @include to(992px) {
+    width: 45px;
+    height: 45px;
+    top: 40px;
+  }
   svg {
     width: 16px;
     height: 16px;
     @include to(1440px) {
       width: 9px;
       height: 9px;
+    }
+    @include to(992px) {
+      width: 8px;
+      height: 8px;
     }
   }
 }
@@ -221,6 +254,10 @@
     @include to(1440px) {
       margin-bottom: 35px;
     }
+    @include to(992px) {
+      margin-bottom: 30px;
+      height: 39vh;
+    }
   }
 
   .swiper-pagination {
@@ -236,6 +273,9 @@
     @include to(1440px) {
       padding: 16px 60px;
       font-size: 12px;
+    }
+    @include to(992px) {
+      padding: 14px 60px;
     }
   }
   .swiper-pagination-container {
@@ -258,6 +298,10 @@
       @include to(1440px) {
         width: 50px;
         height: 50px;
+      }
+      @include to(992px) {
+        width: 45px;
+        height: 45px;
       }
       svg {
         stroke: $black;
@@ -289,6 +333,10 @@
     top: vw(175, 1440);
     left: vw(70, 1440);
   }
+  @include to(992px) {
+    top: 18vh;
+    left: vw(40, 768);
+  }
   .building-video__btn {
     width: 65px;
     height: 65px;
@@ -302,6 +350,15 @@
       width: 50px;
       height: 50px;
       margin-right: 10px;
+    }
+    @include to(992px) {
+      width: 45px;
+      height: 45px;
+      margin-right: 20px;
+      svg {
+        width: 10px;
+        height: 8px;
+      }
     }
   }
   p {

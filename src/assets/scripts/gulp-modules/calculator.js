@@ -1,7 +1,8 @@
 function renderCalculate(containers, state) {
+  containers.inputTotal.value = state.total;
   containers.inputTerm.value = state.term;
   containers.minPayment.value = state.firstInstallment;
-  containers.total.textContent = state.total;
+  containers.total.textContent = state.totalWithPercent;
   containers.monthPayment.textContent = state.totalWithPercent / state.term;
 }
 
@@ -16,7 +17,6 @@ function calculate(container, config) {
     monthPayment: container.querySelector('.js-month-payment'),
     total: container.querySelector('.js-total'),
   };
-
   const state = {
     total: 0,
     firstInstallment: 0,
@@ -25,25 +25,26 @@ function calculate(container, config) {
   };
 
   function recalculateTotalWithPercent(values) {
-    const balancePayment = (values.total - values.firstInstallment);
-    return balancePayment + balancePayment / 100 * config.percent;
+    const balancePayment = values.total - values.firstInstallment;
+    const result = values.total + (balancePayment / 100) * config.percent;
+    return result;
   }
 
   const paymentControlRange = $(containers.paymentControl);
-  const totalControlRange = $(containers.termControl);
+  const termControlRange = $(containers.termControl);
 
   paymentControlRange.ionRangeSlider({
     grid: false,
-    min: config.firstInstallment,
-    max: config.total,
-    from: config.firstInstallment,
+    min: state.total,
+    max: state.total,
+    from: state.total,
     onFinish: (values) => {
       state.firstInstallment = values.from;
       state.totalWithPercent = recalculateTotalWithPercent(state);
       renderCalculate(containers, state);
     },
   });
-  totalControlRange.ionRangeSlider({
+  termControlRange.ionRangeSlider({
     grid: false,
     min: config.installmentPlan.min,
     max: config.installmentPlan.max,
@@ -55,13 +56,29 @@ function calculate(container, config) {
     },
   });
 
-  const instanceTotal = totalControlRange.data('ionRangeSlider');
+  const instanceTerm = termControlRange.data('ionRangeSlider');
   const instancePayment = paymentControlRange.data('ionRangeSlider');
 
   containers.inputTotal.addEventListener('input', (evt) => {
     const total = +evt.target.value ?? 0;
     state.total = total;
-    state.firstInstallment = total / 100 * config.minTotalPercent;
+    state.firstInstallment = (total / 100) * config.minTotalPercent;
+    state.totalWithPercent = recalculateTotalWithPercent(state);
+    renderCalculate(containers, state);
+
+    instancePayment.update({
+      min: state.firstInstallment,
+      max: state.total,
+      from: state.firstInstallment,
+    });
+  });
+
+  containers.minPayment.addEventListener('input', (evt) => {
+    const value = +evt.target.value;
+    if (value > state.total) {
+      state.total = value;
+    }
+    state.firstInstallment = value;
     state.totalWithPercent = recalculateTotalWithPercent(state);
     renderCalculate(containers, state);
     instancePayment.update({
@@ -71,17 +88,11 @@ function calculate(container, config) {
     });
   });
 
-  containers.minPayment.addEventListener('input', (evt) => {
-    state.firstInstallment = +evt.target.value;
-    state.totalWithPercent = recalculateTotalWithPercent(state);
-    renderCalculate(containers, state);
-  });
-
   containers.inputTerm.addEventListener('input', (evt) => {
     state.term = +evt.target.value;
     state.totalWithPercent = recalculateTotalWithPercent(state);
     renderCalculate(containers, state);
-    instanceTotal.update({
+    instanceTerm.update({
       from: state.term,
     });
   });
@@ -93,9 +104,10 @@ function calculate(container, config) {
   });
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const calculateWrap = document.querySelector('#calculator-form');
+  const calculateWrap2 = document.querySelector('#calculator-form5');
+  const calculateWrap3 = document.querySelector('#calculator-form20');
   const config = {
     minTotalPercent: 50,
     percent: 0,
@@ -104,5 +116,23 @@ document.addEventListener('DOMContentLoaded', () => {
       max: 5,
     },
   };
+  const config2 = {
+    minTotalPercent: 50,
+    percent: 7,
+    installmentPlan: {
+      min: 1,
+      max: 5,
+    },
+  };
+  const config3 = {
+    minTotalPercent: 30,
+    percent: 12,
+    installmentPlan: {
+      min: 1,
+      max: 20,
+    },
+  };
   calculate(calculateWrap, config);
+  calculate(calculateWrap2, config2);
+  calculate(calculateWrap3, config3);
 });

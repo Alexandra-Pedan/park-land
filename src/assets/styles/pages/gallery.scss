@@ -49,6 +49,10 @@
           font-size: 75px;
           margin-right: 10px;
         }
+        @include to(992px) {
+          font-size: 70px;
+          margin-right: 5px;
+        }
       }
       &-total {
         font-size: 38px;

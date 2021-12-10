@@ -6,11 +6,17 @@
   @include to(1440px) {
     height: 561px;
   }
+  @include to(992px) {
+    height: 476px;
+  }
   #map {
     height: 700px;
     // height: 41vh;
     @include to(1440px) {
       height: 561px;
+    }
+    @include to(992px) {
+      height: 476px;
     }
   }
 }
@@ -28,6 +34,12 @@
     height: 521px;
     padding: 30px 40px;
   }
+  @include to(992px) {
+    width: auto;
+    height: auto;
+    padding: 30px 48px;
+    left: 10px;
+  }
 }
 
 .contact-card__title {
@@ -39,6 +51,9 @@
   @include to(1440px) {
     font-size: 12px;
   }
+  @include to(992px) {
+    margin-bottom: 5px;
+  }
 }
 .contact-card__adress {
   font-size: 20px;
@@ -47,6 +62,10 @@
   margin-bottom: 10px;
   @include to(1440px) {
     font-size: 16px;
+  }
+  @include to(992px) {
+    font-size: 14px;
+    margin-bottom: 5px;
   }
 }
 
@@ -87,7 +106,9 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-
+    @include to(992px) {
+      margin-bottom: 15px;
+    }
     &--img {
       width: 110px;
       height: 110px;
@@ -96,6 +117,10 @@
       @include to(1440px) {
         width: 80px;
         height: 80px;
+      }
+      @include to(992px) {
+        width: 60px;
+        height: 60px;
       }
     }
     &--info {
@@ -108,6 +133,9 @@
       color: #2d2d2d;
       @include to(1440px) {
         font-size: 16px;
+      }
+      @include to(992px) {
+        font-size: 14px;
       }
     }
     &--position {
@@ -129,9 +157,15 @@
       font-size: 16px;
       margin-bottom: 5px;
     }
+    @include to(992px) {
+      font-size: 14px;
+    }
     &:last-child {
       @include to(1440px) {
         margin-bottom: 20px;
+      }
+      @include to(992px) {
+        margin-bottom: 15px;
       }
     }
   }
@@ -151,6 +185,9 @@
     margin-bottom: 10px;
     @include to(1440px) {
       font-size: 12px;
+    }
+    @include to(992px) {
+      margin-bottom: 5px;
     }
   }
   &__list {
@@ -172,6 +209,33 @@
     color: #2d2d2d;
     @include to(1440px) {
       font-size: 16px;
+    }
+    @include to(992px) {
+      font-size: 14px;
+    }
+  }
+}
+.contacts__link {
+  .realty__link {
+    @include to(992px) {
+      width: 200px;
+      height: 45px;
+    }
+  }
+}
+.contacts__link {
+  .realty__link::before {
+    @include to(992px) {
+      display: inline-block;
+    }
+  }
+}
+.contacts__link {
+  .realty__link {
+    .realty__text {
+      @include to(992px) {
+        display: inline-block;
+      }
     }
   }
 }

@@ -99,8 +99,8 @@ block content
                       .calculator__form-range
                         input(type="range" min="1" max="100" value="0" class="input-range js-min-payment-control" )
                         .slider-range
-                          .slider-range__start.js-start-sum 111
-                          .slider-range__end.js-end-sum 222
+                          .slider-range__start.js-start-sum 
+                          .slider-range__end.js-end-sum 
                     .calculator__form-input.calculator__form-input--range
                       .calculator__form-input
                         label(for="") Термін розтермінування (від 1 до 5 місяців)
@@ -150,15 +150,36 @@ block content
                 .accordion-panel__img
                   img(src="./assets/images/terms3.jpg", alt="")
 
-              .calculator
+              .calculator(id="calculator-form5")
                 .calculator__calculations
                   .calculator__calculations--title Калькулятор кредитування на 5 років:
-
+                  form.calculator__form(action="")
+                    .calculator__form-input
+                      label(for="") Вартість обранної нерухомості, $
+                      input(class="js-current-total" type="text" name="name" placeholder="" autocomplete="off")
+                    .calculator__form-input.calculator__form-input--range
+                      .calculator__form-input
+                        label(for="") Мінімальний перший внесок, $ (50% від вартості)
+                        input(class="js-min-payment" type="text" name="name" placeholder="" autocomplete="off")
+                      .calculator__form-range
+                        input(type="range" min="1" max="100" value="0" class="input-range js-min-payment-control" )
+                        .slider-range
+                          .slider-range__start.js-start-sum 
+                          .slider-range__end.js-end-sum 
+                    .calculator__form-input.calculator__form-input--range
+                      .calculator__form-input
+                        label(for="") Термін розтермінування (від 1 до 5 місяців)
+                        input( type="text" class="js-term" name="name" placeholder="" autocomplete="off")
+                      .calculator__form-range
+                        input(type="range" min="1" max="100" value="0" class="input-range js-term-control" )
+                        .slider-range
+                          .slider-range__start
+                          .slider-range__end
                 .calculator__result
                   .calculator__result--text Обов’язковий щомісячний платіж
-                  .calculator__result--sum-month 1 029.2 $
+                  .calculator__result--sum-month.js-month-payment 1 029.2 $
                   .calculator__result--text Повна вартість нерухомості після розрахунку не змінюється
-                  .calculator__result--sum 121 680.25 $
+                  .calculator__result--sum.js-total 121 680.25 $
               .horizontal-line
               .accordion-panel__info
                 .accordion-panel__text
@@ -172,15 +193,36 @@ block content
                 .accordion-panel__img
                   img(src="./assets/images/terms4.jpg", alt="")
 
-              .calculator
+              .calculator(id="calculator-form20")
                 .calculator__calculations
                   .calculator__calculations--title Калькулятор кредитування на 20 років:
-
+                  form.calculator__form(action="")
+                    .calculator__form-input
+                      label(for="") Вартість обранної нерухомості, $
+                      input(class="js-current-total" type="text" name="name" placeholder="" autocomplete="off")
+                    .calculator__form-input.calculator__form-input--range
+                      .calculator__form-input
+                        label(for="") Мінімальний перший внесок, $ (50% від вартості)
+                        input(class="js-min-payment" type="text" name="name" placeholder="" autocomplete="off")
+                      .calculator__form-range
+                        input(type="range" min="1" max="100" value="0" class="input-range js-min-payment-control" )
+                        .slider-range
+                          .slider-range__start.js-start-sum 
+                          .slider-range__end.js-end-sum 
+                    .calculator__form-input.calculator__form-input--range
+                      .calculator__form-input
+                        label(for="") Термін розтермінування (від 1 до 5 місяців)
+                        input( type="text" class="js-term" name="name" placeholder="" autocomplete="off")
+                      .calculator__form-range
+                        input(type="range" min="1" max="100" value="0" class="input-range js-term-control" )
+                        .slider-range
+                          .slider-range__start
+                          .slider-range__end
                 .calculator__result
                   .calculator__result--text Обов’язковий щомісячний платіж
-                  .calculator__result--sum-month 1 029.2 $
+                  .calculator__result--sum-month.js-month-payment 
                   .calculator__result--text Повна вартість нерухомості після розрахунку не змінюється
-                  .calculator__result--sum 121 680.25 $
+                  .calculator__result--sum.js-total 
               .accordion-panel__consultation
                 .accordion-panel__consultation-text
                   .title Потрібна консультація?
