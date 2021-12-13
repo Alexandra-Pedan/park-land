@@ -2,6 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include to(575px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .realty__link {
     margin-right: 0;
     flex-shrink: 0;
@@ -10,6 +14,10 @@
 .developer__logo {
   display: flex;
   align-items: center;
+  @include to(575px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   svg {
     width: 110px;
     height: 110px;
@@ -22,6 +30,11 @@
     @include to(992px) {
       width: 85px;
       height: 85px;
+    }
+    @include to(575px) {
+      width: 75px;
+      height: 75px;
+      margin-bottom: 20px;
     }
   }
   p {
@@ -37,6 +50,9 @@
     @include to(992px) {
       font-size: 18px;
     }
+    @include to(575px) {
+      width: 100%;
+    }
   }
 }
 
@@ -49,6 +65,9 @@
   }
   @include to(992px) {
     width: 92px;
+  }
+  @include to(575px) {
+    display: none;
   }
   .swiper-button-arrow {
     width: 52px;
@@ -84,6 +103,9 @@
   @include to(992px) {
     margin-top: 30px;
   }
+  // @include to(575px) {
+  //   margin-top: 15px;
+  // }
 }
 .residential__title {
   font-size: 28px;
@@ -97,10 +119,17 @@
   @include to(992px) {
     font-size: 22px;
   }
+  @include to(575px) {
+    font-size: 18px;
+  }
 }
 .swiper-residential {
   overflow: hidden;
   margin-top: 20px;
+  @include to(575px) {
+    margin-top: 15px;
+    overflow: initial;
+  }
   .swiper-slide {
     width: 25%;
     a {
@@ -147,6 +176,9 @@
   @include to(1440px) {
     margin-top: 100px;
   }
+  @include to(575px) {
+    margin-top: 60px;
+  }
   &__title {
     font-size: 38px;
     line-height: 150%;
@@ -160,9 +192,16 @@
     @include to(992px) {
       font-size: 23px;
     }
+    @include to(575px) {
+      font-size: 20px;
+    }
   }
   &__reviews {
     display: flex;
+    @include to(575px) {
+      margin-top: -20px;
+      flex-direction: column;
+    }
     p {
       font-size: 28px;
       line-height: 150%;
@@ -196,6 +235,9 @@
   margin-top: 150px;
   @include to(1440px) {
     margin-top: 100px;
+  }
+  @include to(575px) {
+    margin-top: 60px;
   }
 }
 
@@ -267,6 +309,9 @@
   @include to(1440px) {
     margin-top: 100px;
   }
+  @include to(575px) {
+    margin-top: 60px;
+  }
   &__title {
     font-size: 38px;
     line-height: 150%;
@@ -280,6 +325,9 @@
     @include to(992px) {
       font-size: 23px;
       width: 100%;
+    }
+    @include to(575px) {
+      font-size: 20px;
     }
   }
   &__list {

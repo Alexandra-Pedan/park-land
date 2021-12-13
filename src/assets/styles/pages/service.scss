@@ -13,6 +13,10 @@
     font-size: 23px;
     margin-bottom: 20px;
   }
+  @include to(575px) {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
 }
 
 .service__notes {
@@ -28,16 +32,20 @@
     font-size: 14px;
     margin-bottom: 40px;
   }
-  // @include to(575px) {
-  //   padding-left: 20px;
-  //   font-size: 14px;
-  //   margin-bottom: 40px;
-  // }
+  @include to(575px) {
+    padding-left: 15px;
+    font-size: 14px;
+    margin-bottom: 30px;
+    width: 100%;
+  }
 }
 .service__img {
   margin-bottom: 150px;
   @include to(1440px) {
     margin-bottom: 100px;
+  }
+  @include to(575px) {
+    margin-bottom: 60px;
   }
 }
 
@@ -47,6 +55,9 @@
   @include to(1440px) {
     margin-bottom: 50px;
   }
+  @include to(575px) {
+    margin-bottom: 30px;
+  }
 }
 
 .service__link {
@@ -54,6 +65,10 @@
     @include to(992px) {
       width: 200px;
       height: 45px;
+    }
+    @include to(575px) {
+      width: 208px;
+      height: 50px;
     }
   }
 }

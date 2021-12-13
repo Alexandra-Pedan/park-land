@@ -6,7 +6,7 @@ function initSlider(container) {
     return;
   }
   const swiper = new Swiper(swipEl, {
-    slidesPerView: 4,
+    slidesPerView: 1.8,
     spaceBetween: 20,
     pagination: {
       type: 'fraction',
@@ -14,6 +14,20 @@ function initSlider(container) {
     navigation: {
       nextEl: btnNext,
       prevEl: btnPrev,
+    },
+    breakpoints: {
+      575: {
+        spaceBetween: 12,
+        slidesPerView: 4,
+      },
+      992: {
+        spaceBetween: 20,
+        slidesPerView: 4,
+      },
+      1440: {
+        spaceBetween: 20,
+        slidesPerView: 4,
+      },
     },
   });
 }

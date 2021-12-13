@@ -1,12 +1,18 @@
 .filter {
   display: flex;
   justify-content: space-between;
+  @include to(575px) {
+    flex-direction: column;
+  }
   .realty__link {
     margin-right: 0;
   }
 }
 .select {
   display: flex;
+  @include to(320px) {
+    flex-direction: column;
+  }
 }
 .select__year {
   position: relative;
@@ -15,6 +21,13 @@
   z-index: 20;
   @include to(1440px) {
     margin-right: 40px;
+  }
+  @include to(575px) {
+    margin-right: 10px;
+  }
+  @include to(320px) {
+    width: 208px;
+    margin-bottom: 20px;
   }
   &--list {
     width: 236px;
@@ -30,6 +43,17 @@
     transition: opacity 0.45s ease, visibility 0.45s ease;
     @include to(1440px) {
       width: 171px;
+      top: 30px;
+      padding-top: 10px;
+    }
+    @include to(992px) {
+      width: 150px;
+    }
+    @include to(575px) {
+      width: 155px;
+    }
+    @include to(320px) {
+      width: 208px;
     }
   }
   &--item {
@@ -42,6 +66,17 @@
     text-transform: uppercase;
     color: #2d2d2d;
     transition: $transition-fuction;
+    @include to(1440px) {
+      padding: 10px 40px;
+      font-size: 12px;
+      &:last-child {
+        padding-bottom: 20px;
+      }
+    }
+    @include to(992px) {
+      padding: 10px 30px;
+    }
+
     &:hover {
       @include from(992px) {
         color: $green;
@@ -59,8 +94,28 @@
     letter-spacing: 0.01em;
     text-transform: uppercase;
     color: #2d2d2d;
-    padding: 21px 50px;
+    // padding: 21px 50px;
+    padding-left: 50px;
+    align-items: center;
     transition: $transition-fuction;
+    @include to(1440px) {
+      width: 171px;
+      height: 50px;
+      font-size: 12px;
+      padding-left: 40px;
+    }
+    @include to(992px) {
+      width: 150px;
+      height: 45px;
+      padding-left: 30px;
+    }
+    @include to(575px) {
+      width: 155px;
+    }
+    @include to(320px) {
+      width: 208px;
+      height: 50px;
+    }
     &::after {
       content: '';
       width: 12px;
@@ -72,6 +127,16 @@
       top: 50%;
       right: 50px;
       transform: translate(0, -50%);
+      @include to(1440px) {
+        width: 9px;
+        height: 10px;
+        right: 40px;
+      }
+      @include to(992px) {
+        width: 8px;
+        height: 9px;
+        right: 30px;
+      }
     }
   }
   &:hover {
@@ -93,7 +158,9 @@
 .select__month {
   position: relative;
   cursor: pointer;
-
+  @include to(320px) {
+    width: 208px;
+  }
   &--list {
     position: absolute;
     top: 40px;
@@ -109,6 +176,20 @@
     opacity: 0;
     // transition: $transition-fuction;
     transition: opacity 0.45s ease, visibility 0.45s ease;
+    @include to(1440px) {
+      width: 171px;
+      top: 30px;
+      padding-top: 10px;
+    }
+    @include to(992px) {
+      width: 150px;
+      top: 30px;
+      padding-top: 10px;
+    }
+    @include to(320px) {
+      width: 208px;
+      // position: initial;
+    }
   }
   &--item {
     padding: 20px 50px;
@@ -121,6 +202,16 @@
     color: #2d2d2d;
     padding: 0px 50px 21px 50px;
     transition: $transition-fuction;
+    @include to(1440px) {
+      padding: 10px 40px;
+      font-size: 12px;
+      &:last-child {
+        padding-bottom: 20px;
+      }
+    }
+    @include to(992px) {
+      padding: 10px 30px;
+    }
     &:hover {
       @include from(992px) {
         color: $green;
@@ -133,15 +224,31 @@
     background: #f0f0f0;
     border-radius: 40px;
     display: flex;
+    align-items: center;
     font-size: 16px;
     line-height: 140%;
     letter-spacing: 0.01em;
     text-transform: uppercase;
     white-space: nowrap;
     color: #2d2d2d;
-    padding: 21px 50px;
+    padding-left: 50px;
+    // padding: 21px 50px;
     transition: $transition-fuction;
-
+    @include to(1440px) {
+      width: 171px;
+      height: 50px;
+      font-size: 12px;
+      padding-left: 40px;
+    }
+    @include to(992px) {
+      width: 150px;
+      height: 45px;
+      padding-left: 30px;
+    }
+    @include to(320px) {
+      width: 208px;
+      height: 55px;
+    }
     &::after {
       content: '';
       width: 12px;
@@ -153,6 +260,16 @@
       top: 50%;
       right: 50px;
       transform: translate(0, -50%);
+      @include to(1440px) {
+        width: 9px;
+        height: 10px;
+        right: 40px;
+      }
+      @include to(992px) {
+        width: 8px;
+        height: 9px;
+        right: 30px;
+      }
     }
   }
   &:hover {
@@ -184,6 +301,10 @@
     width: calc(100% + 20px);
     margin: 40px 0 0 -20px;
   }
+  @include to(575px) {
+    width: 100%;
+    margin: 40px 0 0 0;
+  }
 }
 .news-content__item {
   --offset: 60px;
@@ -197,6 +318,13 @@
   }
   @include to(992px) {
     --offset: 20px;
+  }
+  @include to(575px) {
+    --offset: 0;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 40px;
   }
 }
 .news-content__item--offer {
@@ -244,6 +372,10 @@
   @include to(992px) {
     height: 190px;
     margin-bottom: 30px;
+  }
+  @include to(575px) {
+    height: 190px;
+    margin-bottom: 20px;
   }
   &:hover {
     @include from(992px) {
@@ -293,6 +425,9 @@
   }
   @include to(992px) {
     font-size: 15px;
+  }
+  @include to(575px) {
+    font-size: 16px;
   }
 }
 .button--skoll-arrow {
@@ -347,6 +482,9 @@
 
 .plagination {
   margin-bottom: 50px;
+  @include to(575px) {
+    margin-bottom: 30px;
+  }
   &__list {
     display: flex;
   }
@@ -376,6 +514,9 @@
       width: 45px;
       height: 45px;
       font-size: 12px;
+    }
+    @include to(575px) {
+      margin-right: 10px;
     }
     &--current {
       background: $green;

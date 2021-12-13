@@ -16,6 +16,9 @@
   @include to(992px) {
     font-size: 23px;
   }
+  @include to(575px) {
+    font-size: 18px;
+  }
 }
 .post-service__content {
   display: flex;
@@ -24,13 +27,24 @@
   @include to(1440px) {
     margin-bottom: 100px;
   }
+  @include to(575px) {
+    flex-direction: column;
+    margin-bottom: 60px;
+  }
 }
 .post-service__img {
   width: 47.5%;
+  @include to(575px) {
+    width: 100%;
+  }
 }
 
 .post-service__list {
   width: 47.5%;
+  @include to(575px) {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 
 .post-service__item {
@@ -100,6 +114,10 @@
   @include to(992px) {
     font-size: 24px;
   }
+  @include to(575px) {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
   a {
     text-decoration: none;
     font-size: 38px;
@@ -125,12 +143,18 @@
         width: 219px;
         left: 19px;
       }
+      @include to(575px) {
+        width: 180px;
+      }
     }
     @include to(1440px) {
       font-size: 28px;
     }
     @include to(992px) {
       font-size: 24px;
+    }
+    @include to(575px) {
+      font-size: 20px;
     }
   }
 }

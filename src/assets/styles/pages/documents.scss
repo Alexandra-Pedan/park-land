@@ -7,6 +7,9 @@
   @include to(992px) {
     padding: 0 vw(40, 768) 50px vw(40, 768);
   }
+  @include to(575px) {
+    padding: 0 vw(20, 360) 30px vw(20, 360);
+  }
   .documents-sticker {
     position: absolute;
     left: 0;
@@ -52,6 +55,10 @@
       font-size: 50px;
       margin-bottom: 40px;
     }
+    @include to(575px) {
+      font-size: 35px;
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -68,6 +75,11 @@
     }
     @include to(992px) {
       padding: 20px 0 47px 0;
+    }
+    @include to(575px) {
+      padding: 10px 0 30px 0;
+      flex-direction: column;
+      position: relative;
     }
     &:hover {
       @include from(992px) {
@@ -89,6 +101,9 @@
           height: 10px;
           margin-top: 5px;
         }
+        @include to(575px) {
+          display: none;
+        }
       }
       p {
         font-size: 18px;
@@ -102,10 +117,17 @@
         @include to(992px) {
           font-size: 12px;
         }
+        @include to(575px) {
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
       }
     }
     .description {
       width: 60%;
+      @include to(575px) {
+        width: 80%;
+      }
       p {
         font-size: 24px;
         line-height: 130%;
@@ -116,6 +138,9 @@
         @include to(992px) {
           font-size: 15px;
         }
+        @include to(575px) {
+          font-size: 14px;
+        }
       }
     }
     .image {
@@ -123,7 +148,8 @@
       height: 65px;
       border-radius: 50%;
       position: relative;
-      background: $black;
+      // background: $black;
+      background: transparent;
       overflow: hidden;
       @include to(1440px) {
         width: 50px;
@@ -132,6 +158,16 @@
       @include to(992px) {
         width: 45px;
         height: 45px;
+      }
+      @include to(575px) {
+        position: absolute;
+        top: 10px;
+        right: 0;
+      }
+      &:hover {
+        @include from(992px) {
+          background-color: $black;
+        }
       }
       &::before {
         content: '';
@@ -148,7 +184,9 @@
         left: 0;
       }
       &:hover::before {
-        transform: translate3d(0, 100%, 0);
+        @include from(992px) {
+          transform: translate3d(0, 100%, 0);
+        }
       }
       .icon--download {
         width: 15px;

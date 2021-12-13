@@ -17,6 +17,9 @@
   @include to(992px) {
     margin: calc(var(--header-h) + 30px) vw(40, 768) 20px 0;
   }
+  @include to(575px) {
+    margin: calc(var(--header-h) + 30px) vw(20, 360) 30px 0;
+  }
   // @include to(576px) {
   //   margin: 0 vw(20, 320) 20px auto;
   //   font-size: 10px;
@@ -69,9 +72,12 @@
       @include to(1440px) {
         max-width: 162px;
       }
-      // @include to(576px) {
-      //   max-width: 14ch;
-      // }
+      @include to(576px) {
+        max-width: 131px;
+      }
+      @include to(320px) {
+        max-width: 80px;
+      }
     }
   }
 }

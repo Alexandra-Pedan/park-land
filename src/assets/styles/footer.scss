@@ -527,6 +527,8 @@ footer {
       width: 70%;
       text-align: left;
       margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
     }
   }
   .footer-dev {

@@ -2,12 +2,23 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
+  @include to(575px) {
+    flex-direction: column-reverse;
+    margin-bottom: 30px;
+  }
   &__contacts {
     width: 47.5%;
+    @include to(575px) {
+      width: 100%;
+      margin-top: 40px;
+    }
   }
   .connection {
     width: 47.5%;
     margin-top: 0;
+    @include to(575px) {
+      width: 100%;
+    }
     &__title {
       font-size: 38px;
       line-height: 150%;
@@ -49,6 +60,10 @@
   @include to(992px) {
     font-size: 24px;
   }
+  @include to(575px) {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
 }
 
 .sale__contacts--adress {
@@ -61,6 +76,9 @@
   @include to(992px) {
     font-size: 16px;
   }
+  @include to(575px) {
+    font-size: 14px;
+  }
 }
 
 .sale__contacts--link {
@@ -70,6 +88,9 @@
   }
   @include to(992px) {
     margin: 16px 0 36px 0;
+  }
+  @include to(575px) {
+    margin: 20px 0 37px 0;
   }
   a {
     width: 290px;
@@ -91,11 +112,11 @@
       height: 50px;
       font-size: 12px;
     }
-    // @include to(992px) {
-    //   width: 210px;
-    //   height: 50px;
-    //   font-size: 12px;
-    // }
+    @include to(575px) {
+      width: 208px;
+      height: 50px;
+      font-size: 12px;
+    }
   }
 }
 

@@ -807,12 +807,12 @@
     @include to(1440px) {
       font-size: 14px;
     }
-    @include to(992px) {
-      width: 38% !important;
-    }
-    @include to(575px) {
-      width: 90% !important;
-    }
+    // @include to(992px) {
+    //   width: 38% !important;
+    // }
+    // @include to(575px) {
+    //   width: 90% !important;
+    // }
     a {
       text-decoration: none;
     }
@@ -1123,20 +1123,22 @@
       box-sizing: content-box;
     }
     .swiper-slide {
-      width: 79% !important;
-      // border-radius: 15px 100px 15px 100px;
+      width: 79%;
+      border-radius: 15px 100px 15px 100px;
       @include to(992px) {
-        width: 65% !important;
+        width: 65%;
       }
     }
     .swiper-slide.vertical {
-      width: 38% !important;
+      // width: 38%;
       @include to(992px) {
-        width: 31% !important;
+        // width: 31%;
       }
+      width: auto;
       .swiper-slide-img {
         border-radius: 100px 0 100px 0;
-        width: 100%;
+        // width: 100%;
+        width: max-content;
         height: 750px;
         @include to(1920px) {
           height: 650px;
