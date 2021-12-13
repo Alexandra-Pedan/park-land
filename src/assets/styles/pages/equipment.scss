@@ -1,5 +1,8 @@
 .accordion {
   width: 47.5%;
+  @include to(575px) {
+    width: 100%;
+  }
   &-item {
     border-bottom: 1px solid #cbd2c5;
     position: relative;
@@ -63,6 +66,9 @@
     @include to(1440px) {
       font-size: 19px;
     }
+    @include to(575px) {
+      font-size: 18px;
+    }
     .is-open > & {
       .plus::before {
         height: 0;
@@ -80,6 +86,9 @@
       @include to(1440px) {
         font-size: 16px;
         padding-top: 10px;
+      }
+      @include to(575px) {
+        font-size: 14px;
       }
     }
   }
@@ -151,5 +160,9 @@
   background: $black;
   @include to(1440px) {
     height: 470px;
+  }
+  @include to(575px) {
+    height: 470px;
+    margin-bottom: 30px;
   }
 }
