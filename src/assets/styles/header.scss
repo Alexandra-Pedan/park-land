@@ -425,6 +425,9 @@
     left: 0;
     bottom: 0;
     width: 100%;
+    @include to(575px) {
+      padding: 0 vw(20, 360);
+    }
   }
   li {
     width: 100%;

@@ -245,6 +245,9 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  @include to(575px) {
+    flex-direction: column;
+  }
 }
 .developer-advertising {
   &__text {
@@ -260,6 +263,10 @@
     @include to(992px) {
       font-size: 18px;
     }
+    @include to(575px) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
   }
   &__text--little {
     width: 47.5%;
@@ -268,6 +275,9 @@
     color: #435055;
     @include to(1440px) {
       font-size: 14px;
+    }
+    @include to(575px) {
+      width: 100%;
     }
   }
 }
@@ -286,11 +296,18 @@
   @include to(992px) {
     font-size: 23px;
   }
+  @include to(575px) {
+    font-size: 20px;
+    padding-top: 60px;
+  }
 }
 .developer-bonuses {
   margin-top: 150px;
   @include to(1440px) {
     margin-top: 100px;
+  }
+  @include to(575px) {
+    margin-top: 60px;
   }
   .post-service__content {
     flex-direction: row-reverse;
@@ -300,6 +317,10 @@
     }
     @include to(992px) {
       margin-bottom: 50px;
+    }
+    @include to(575px) {
+      flex-direction: column;
+      margin-bottom: 30px;
     }
   }
 }
@@ -349,13 +370,20 @@
       margin-right: 20px;
       height: 13.4%;
     }
+    @include to(575px) {
+      width: 46%;
+      margin-bottom: 20px;
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
     &:last-child {
       margin-right: 0;
     }
   }
 }
 
-.our-projects__list {
+.our-projects__container {
   width: 36.4%;
   background: #ffffff;
   padding: 20px;
@@ -364,18 +392,19 @@
   left: 20px;
   height: calc(100% - 40px);
   overflow-y: scroll;
-  @include to(1440px) {
-    padding: 15px;
-    top: 15px;
-    left: 15px;
-    height: calc(100% - 30px);
+  @include to(575px) {
+    width: 100%;
+    position: initial;
   }
-  // @include to(575px) {
-  //   padding: 15px;
-  //   top: 15px;
-  //   left: 15px;
-  //   height: calc(100% - 30px);
-  // }
+  @include to(575px) {
+    // padding: 15px;
+    // top: 15px;
+    // left: 15px;
+    // height: calc(100% - 30px);
+    padding: 0;
+    // height: 224px;
+    margin-top: -30px;
+  }
 }
 ::-webkit-scrollbar {
   width: 3px;
@@ -388,6 +417,35 @@
 
 ::-webkit-scrollbar-thumb {
   background: $green;
+}
+.our-projects__list {
+  @include to(575px) {
+    padding: 15px 15px 0 15px;
+    height: 0;
+    display: none;
+  }
+}
+.our-projects__list--mobile {
+  display: none;
+  @include to(575px) {
+    display: flex;
+    padding: 26px 60px;
+    border: 1px solid #cbd2c5;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    color: #2d2d2d;
+  }
+  &::after {
+    content: '';
+    display: inline-block;
+    background-image: url('../images/arrow-developer.svg');
+    width: 8px;
+    height: 4px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 8px 10px;
+  }
 }
 .our-projects__item {
   background: #ffffff;

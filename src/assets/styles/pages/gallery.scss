@@ -8,7 +8,29 @@
     top: 0;
     width: 100vw;
     height: 100vh;
-
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+      width: 60px;
+      height: 60px;
+      @include to(992px) {
+        display: block;
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      @include to(575px) {
+        width: 45px;
+        height: 45px;
+      }
+    }
+    .swiper-button-prev {
+      left: vw(40, 768);
+    }
+    .swiper-button-next {
+      right: vw(40, 768);
+    }
     &-slide:after {
       content: '';
       display: block;
@@ -39,6 +61,14 @@
         left: vw(70, 1440);
         font-size: 28px;
       }
+      @include to(992px) {
+        left: vw(40, 768);
+      }
+      @include to(575px) {
+        bottom: 30px;
+        left: vw(20, 360);
+        font-size: 16px;
+      }
       &-current {
         font-size: 110px;
         line-height: 90%;
@@ -53,6 +83,9 @@
           font-size: 70px;
           margin-right: 5px;
         }
+        @include to(575px) {
+          font-size: 49px;
+        }
       }
       &-total {
         font-size: 38px;
@@ -60,6 +93,9 @@
         text-transform: uppercase;
         @include to(1440px) {
           font-size: 28px;
+        }
+        @include to(575px) {
+          font-size: 16px;
         }
       }
     }

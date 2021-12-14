@@ -39,3 +39,18 @@ panorama.big.addEventListener('mouseenter', ({ clientX }) => {
     x: clientX * ((getWidth(panorama.navImg) - getWidth(panorama.nav)) / windowW),
   });
 });
+
+panorama.big.addEventListener('touchmove', (event) => {
+  const { clientX } = event.targetTouches[0];
+  if (clientX < 0 || clientX > windowW) {
+    return;
+  }
+
+  if (panorama.isAnim === true) return;
+  const inPercent = (clientX * 100) / windowW;
+  panorama.img.style.transform = `translateX(${clientX * -windowWToImage}px)`;
+  panorama.nav.style.transform = `translateX(${clientX
+    * ((panorama.navImg.getBoundingClientRect().width - panorama.nav.getBoundingClientRect().width)
+      / windowW)}px)`;
+  panorama.nav.style.backgroundPositionX = `${inPercent}%`;
+});

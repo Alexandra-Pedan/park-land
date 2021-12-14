@@ -1,9 +1,11 @@
 function renderCalculate(containers, state) {
+  const monthPayment = (state.totalWithPercent - state.firstInstallment) / state.term;
+
   containers.inputTotal.value = state.total;
   containers.inputTerm.value = state.term;
   containers.minPayment.value = state.firstInstallment;
   containers.total.textContent = state.totalWithPercent;
-  containers.monthPayment.textContent = state.totalWithPercent / state.term;
+  containers.monthPayment.textContent = monthPayment.toFixed(2);
 }
 
 function calculate(container, config) {
@@ -64,6 +66,7 @@ function calculate(container, config) {
     state.total = total;
     state.firstInstallment = (total / 100) * config.minTotalPercent;
     state.totalWithPercent = recalculateTotalWithPercent(state);
+    console.log('iui');
     renderCalculate(containers, state);
 
     instancePayment.update({

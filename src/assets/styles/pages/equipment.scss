@@ -13,6 +13,11 @@
     @include to(1440px) {
       margin-bottom: 30px;
     }
+    @include to(575px) {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
     &.is-open {
       border-bottom: none;
       // margin-bottom: 0;

@@ -32,6 +32,7 @@ function sideSwitchArrow(swiper, arrow, container) {
   };
   arrow.dataset.side = 'leftSide';
 
+  console.log(container);
   container.addEventListener('mousemove', desktopNavButtonHandler);
   container.addEventListener('mouseenter', () => {
     arrow.show();
@@ -48,6 +49,7 @@ function sideSwitchArrow(swiper, arrow, container) {
   /** ms ---> main-screen */
 
   function desktopNavButtonHandler(evt) {
+    console.log(arrow);
     // arrow.style.position = 'fixed';
     arrow.style.left = `${evt.clientX - 18}px`;
     arrow.style.top = `${evt.clientY - 18}px`;
@@ -91,5 +93,9 @@ function sideSwitchArrow(swiper, arrow, container) {
 
   // eslint-disable-next-line no-unused-vars
 }
-sideSwitchArrow(swiper, document.querySelector('.btn-gallery'), document.querySelector('.swiper'));
+sideSwitchArrow(
+  swiper,
+  document.querySelector('.btn-gallery'),
+  document.querySelector('.js-swiper'),
+);
 /** СТрелка переключатель в зависимости от положения на єкране END */

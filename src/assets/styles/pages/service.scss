@@ -11,11 +11,10 @@
   }
   @include to(992px) {
     font-size: 23px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   @include to(575px) {
-    font-size: 20px;
-    margin-bottom: 30px;
+    font-size: 18px;
   }
 }
 
