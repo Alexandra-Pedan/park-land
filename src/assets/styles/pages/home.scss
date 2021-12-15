@@ -1126,7 +1126,10 @@
       width: 79%;
       border-radius: 15px 100px 15px 100px;
       @include to(992px) {
-        width: 65%;
+        width: 62%;
+      }
+      @include to(575px) {
+        width: 85%;
       }
     }
     .swiper-slide.vertical {

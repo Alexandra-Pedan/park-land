@@ -9,7 +9,9 @@
     height: 480px;
     margin-bottom: 0;
   }
-
+  @include to(575px) {
+    height: 100%;
+  }
   #map {
     height: 730px;
     @include to(1920px) {
@@ -17,6 +19,10 @@
     }
     @include to(1440px) {
       height: 480px;
+    }
+    @include to(575px) {
+      height: 440px;
+      margin-bottom: 0;
     }
   }
 }
@@ -133,8 +139,12 @@
     margin-bottom: 40px;
     height: 210px;
   }
-  @include to(992px) {
-    height: 224px;
+  @include to(1440px) {
+    margin-bottom: 40px;
+    height: 210px;
+  }
+  @include to(1244px) {
+    height: 223px;
   }
   @include to(575px) {
     height: 100%;
@@ -223,20 +233,66 @@
 }
 
 .designations {
+  // position: absolute;
+  // top: 50%;
+  // transform: translateY(-50%);
+  // left: vw(100, 1920);
+  // height: calc(100% - 160px);
+  // overflow-y: scroll;
+  width: auto;
+  background: #ffffff;
+  padding: 0px;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 80px;
   left: vw(100, 1920);
+  height: calc(100% - 160px);
+  overflow-y: scroll;
   @include to(1440px) {
+    top: 60px;
     left: vw(70, 1440);
+    height: calc(100% - 120px);
   }
   @include to(992px) {
     left: vw(40, 768);
   }
-  background: #ffffff;
+  @include to(575px) {
+    // left: 0;
+    // top: 0;
+    width: 100%;
+    position: initial;
+    // transform: translateY(0px);
+    // position: relative;
+    // top: 0;
+    // background: yellow;
+    // height: auto;
+  }
+  ::-webkit-scrollbar {
+    width: 3px;
+    height: 40px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $green;
+  }
   &__list {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
+    @include to(575px) {
+      height: 440px;
+      width: 100%;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow-y: auto;
+      border: 1px solid #cbd2c5;
+      background: #ffffff;
+      // display: none;
+    }
   }
   &__item {
     display: flex;
@@ -249,8 +305,12 @@
     cursor: pointer;
     transition: $transition-fuction;
     @include to(1440px) {
-      padding: 16px 30px;
+      padding: 16px 60px 16px 40px;
       font-size: 14px;
+    }
+    @include to(992px) {
+      padding: 16px 60px 16px 20px;
+      font-size: 12px;
     }
     .marker {
       width: 23px;
@@ -269,11 +329,27 @@
     }
   }
 }
+.designations__list--open {
+  opacity: 1;
+}
 .designations__item--active {
   background: $green;
   padding-left: 60px;
   color: #ffffff;
   @include to(1440px) {
     padding-left: 40px;
+  }
+}
+.designations--mobile {
+  display: none;
+  @include to(575px) {
+    display: flex;
+    padding: 26px 60px;
+    border: 1px solid #cbd2c5;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    color: #2d2d2d;
+    width: 100%;
   }
 }

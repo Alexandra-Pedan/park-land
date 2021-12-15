@@ -22,9 +22,10 @@ block scripts
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/no-scroll.js')
   script(defer src='./assets/scripts/map.js')
   script(defer src='./assets/scripts/scroll-down.js')
-  script(defer src='./assets/scripts/footer.js')
+  //- script(defer src='./assets/scripts/footer.js')
 block arrow 
   +svg('scroll-down').js-scroll-down 
 block content
@@ -38,7 +39,10 @@ block content
   .map.map-infrastructure(width="500" height="500px")
     #map(width="500" height="500px")
     .designations
-      ul.designations__list 
+      .designations--mobile.js-open-list
+        span Умовні позначення
+        img(src="./assets/images/arrow-developer.svg", alt="").our-projects__arrow
+      ul.designations__list
         li.designations__item
           img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
           |Дитячий садочок
@@ -49,6 +53,18 @@ block content
           img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
           |Дитячий садочок
         li.designations__item.designations__item--active
+          img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
+          |Дитячий садочок
+        li.designations__item
+          img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
+          |Дитячий садочок
+        li.designations__item
+          img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
+          |Дитячий садочок
+        li.designations__item
+          img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
+          |Дитячий садочок
+        li.designations__item
           img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
           |Дитячий садочок
         li.designations__item

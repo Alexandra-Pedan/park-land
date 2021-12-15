@@ -2,9 +2,9 @@
 // Google map start
 function func() {
   const script = document.createElement('script');
-  let key = '';
-  if (window.location.href.match(/localhost/)) key = '';
-  // const key = '';
+  // let key = '';
+  // if (window.location.href.match(/localhost/)) key = '';
+  const key = 'AIzaSyC-O8Qs2eMRsMlIgf4fZe-UzPSwn3sVbkA';
   script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`;
   document.getElementsByTagName('head')[0].appendChild(script);
 }
@@ -361,3 +361,16 @@ function getMapTheme() {
     },
   ];
 }
+
+const openList = document.querySelector('.js-open-list');
+const titleArrow = document.querySelector('.our-projects__arrow');
+const projectsList = document.querySelector('.designations__list');
+
+openList.addEventListener('click', () => {
+  projectsList.classList.toggle('designations__list--open');
+  if (projectsList.classList.contains('designations__list--open')) {
+    titleArrow.style.transform = 'rotate(180deg)';
+  } else {
+    titleArrow.style.transform = '';
+  }
+});

@@ -423,6 +423,10 @@ footer {
     top: -750px;
     right: vw(20, 360);
   }
+
+  @include to(368px) {
+    top: -785px;
+  }
   .green-hover {
     width: 65px;
     height: 65px;

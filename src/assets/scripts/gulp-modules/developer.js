@@ -41,9 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // Google map start
 function func() {
   const script = document.createElement('script');
-  let key = '';
-  if (window.location.href.match(/localhost/)) key = '';
-  // const key = '';
+  // let key = '';
+  // if (window.location.href.match(/localhost/)) key = '';
+  const key = 'AIzaSyC-O8Qs2eMRsMlIgf4fZe-UzPSwn3sVbkA';
   script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`;
   document.getElementsByTagName('head')[0].appendChild(script);
 }
@@ -54,10 +54,10 @@ const options = {
   threshold: 0.1,
 };
 
-maps.forEach((image) => {
+maps.forEach(image => {
   const callback = (entries, observer) => {
     /* Content excerpted, show below */
-    entries.forEach((entry) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
         const lazyImage = entry.target;
         lazyImage.src = lazyImage.dataset.src;
@@ -94,8 +94,8 @@ function initMap() {
     language: 'en',
     styles: getMapTheme(),
   });
-  const filterMarkers = function (category, categoriesArray) {
-    gmarkers1.forEach((el) => {
+  const filterMarkers = function(category, categoriesArray) {
+    gmarkers1.forEach(el => {
       if (categoriesArray.has(el.category) || categoriesArray.size === 1) {
         el.setMap(map);
         el.setAnimation(google.maps.Animation.DROP);
@@ -104,8 +104,8 @@ function initMap() {
       }
     });
   };
-  filterItems.forEach((item) => {
-    item.addEventListener('click', (evt) => {
+  filterItems.forEach(item => {
+    item.addEventListener('click', evt => {
       evt.stopImmediatePropagation();
       item.classList.toggle('active');
       if (item.classList.contains('active')) {
@@ -170,7 +170,7 @@ function initMap() {
     content: '',
     maxWidth: 200,
   });
-  markersData.forEach((marker) => {
+  markersData.forEach(marker => {
     const category = marker.type;
     const mapMarker = new google.maps.Marker({
       map,
@@ -180,7 +180,7 @@ function initMap() {
       position: new google.maps.LatLng(marker.position.lat, marker.position.lng),
     });
 
-    google.maps.event.addListener(mapMarker, 'click', function () {
+    google.maps.event.addListener(mapMarker, 'click', function() {
       infowindow.setContent(marker.content);
       infowindow.open(map, mapMarker);
       map.panTo(this.getPosition());
@@ -400,3 +400,47 @@ function getMapTheme() {
     },
   ];
 }
+
+const openList = document.querySelector('.js-open-list');
+const titleArrow = document.querySelector('.our-projects__arrow');
+const projectsList = document.querySelector('.our-projects__list');
+
+openList.addEventListener('click', () => {
+  projectsList.classList.toggle('our-projects__list--open');
+  if (projectsList.classList.contains('our-projects__list--open')) {
+    titleArrow.style.transform = 'rotate(180deg)';
+  } else {
+    titleArrow.style.transform = '';
+  }
+});
+
+// Stars rating start
+const ratings = document.querySelectorAll('.rating');
+if (ratings.length > 0) {
+  initRatings();
+}
+
+// Основная функция
+function initRatings() {
+  let ratingActive, ratingValue;
+  // "Бегаем" по всем рейтингам на странице
+  for (let index = 0; index < ratings.length; index++) {
+    const rating = ratings[index];
+    initRating(rating);
+  }
+  //  Инициализируем конкретный рейтинг
+  function initRating(rating) {
+    initRatingVars(rating);
+    setRatingActiveWidth();
+  }
+  //  Инициализация переменных
+  function initRatingVars(rating) {
+    ratingActive = rating.querySelector('.rating__active');
+    ratingValue = rating.querySelector('.rating__value');
+  // Изменяем ширину активных звезд
+  function setRatingActiveWidth(index = ratingValue.innerHTML) {
+    const ratingActiveWidth = index / 0.05;
+    ratingActive.style.width = `${ratingActiveWidth}%`;
+  }
+}
+// Stars rating end
