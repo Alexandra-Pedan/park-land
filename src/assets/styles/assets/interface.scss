@@ -9,6 +9,9 @@
   flex-direction: column;
   z-index: 2;
   min-height: 100vh;
+  // @include to(992px) {
+  //   overflow: hidden;
+  // }
   .page__content {
     flex-grow: 1;
   }
@@ -42,4 +45,11 @@
     background-color: #000;
     content: '';
   }
+}
+#equipment {
+  // @include from(992px) {
+  .page__inner {
+    overflow: initial;
+  }
+  // }
 }

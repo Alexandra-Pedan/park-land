@@ -8,14 +8,21 @@ $(() => {
   // Event listeners
   $accordion.on('click', '.accordion-toggle', function () {
     // Toggle the current accordion panel and close others
-    $allPanels.slideUp();
-    $allItems.removeClass('is-open');
+    // $allPanels.slideUp();
+    // $allItems.removeClass('is-open');
     if (
       $(this)
         .next()
         .is(':visible')
     ) {
-      $('.accordion-panel').slideUp();
+      // $('.accordion-panel').slideUp();
+
+      $(this)
+        .parent()
+        .removeClass('is-open');
+      $(this)
+        .next()
+        .slideUp();
     } else {
       $(this)
         .next()

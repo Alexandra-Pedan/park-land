@@ -98,4 +98,11 @@ function initHeader() {
     formGratitude.classList.remove('sideform-active');
     document.querySelector('body').style.overflow = 'auto';
   }));
+
+  document.querySelector('.js-menu-main').addEventListener('click', ({ target }) => {
+    if (target.tagName === 'a') {
+      return;
+    }
+    menuClose.click();
+  });
 }

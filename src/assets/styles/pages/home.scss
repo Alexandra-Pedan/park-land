@@ -125,7 +125,7 @@
   height: 65px;
   // background: $green;
   border-radius: 1000px;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   // text-align: center;
@@ -770,7 +770,7 @@
       width: 90px;
       height: 56px;
       stroke: #f0f0f0;
-      stroke-width: 2px;
+      stroke-width: 3px;
       cursor: pointer;
       transition: $transition-fuction;
       @include to(1440px) {
@@ -908,7 +908,7 @@
     width: 15px;
     height: 16px;
     stroke: #f0f0f0;
-    stroke-width: 6px;
+    stroke-width: 11px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1049,7 +1049,7 @@
       height: 56px;
       stroke: #2d2d2d;
       cursor: pointer;
-      stroke-width: 2px;
+      stroke-width: 3px;
       transition: $transition-fuction;
       @include to(1440px) {
         width: 65px;

@@ -1,6 +1,7 @@
 .post-service {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .post-service__title {
   font-size: 28px;
@@ -24,6 +25,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 150px;
+
   @include to(1440px) {
     margin-bottom: 100px;
   }
@@ -34,6 +36,12 @@
 }
 .post-service__img {
   width: 47.5%;
+  position: sticky;
+  top: calc(var(--header-h) + 50px);
+  z-index: 5;
+  @include to(1440px) {
+    top: calc(var(--header-h) + 40px);
+  }
   @include to(575px) {
     width: 100%;
   }
