@@ -131,8 +131,6 @@
   position: fixed;
   // transform: translate(-50%, -50%) scale(1);
   z-index: 103;
-  width: 200px;
-  height: 200px;
   transition: transform 0.5s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
   pointer-events: none;
   cursor: none;

@@ -45,7 +45,7 @@ const forms = [
 
 // const formsTel = ['[data-home-contact]', '[data-form-homepage]'];
 // const formsTel = ['[data-form-homepage]'];
-const formsTel = ['[data-popup-form]', '[data-footer-form]'];
+const formsTel = ['[data-popup-form]'];
 
 formsTel.forEach((form) => {
   const $form = document.querySelector(form);
@@ -86,12 +86,12 @@ formsTel.forEach((form) => {
               .required(i18next.t('required'))
               .test(
                 'phone',
-                'wow',
+                i18next.t('required'),
                 (evt) => {
                   const digitsCount = evt.replace(/[^0-9]/g, '');
                   return digitsCount.length >= 12;
                 },
-                'Must be only digits',
+                i18next.t('required'),
               )
               .min(16, i18next.t('field_too_short', { cnt: 19 - 7 })),
 
@@ -130,6 +130,18 @@ footerForm.forEach((form) => {
         },
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
         fields: {
+          name: {
+            inputWrapper: new SexyInput({
+              animation: 'none',
+              $field: $form.querySelector('[data-field-name]'),
+              typeInput: 'text',
+            }),
+            rule: yup.string().required(i18next.t('required')),
+
+            defaultMessage: i18next.t('phone'),
+            valid: false,
+            error: [],
+          },
           phone: {
             inputWrapper: new SexyInput({
               animation: 'none',
@@ -139,6 +151,15 @@ footerForm.forEach((form) => {
             rule: yup
               .string()
               .required(i18next.t('required'))
+              .test(
+                'phone',
+                i18next.t('required'),
+                (evt) => {
+                  const digitsCount = evt.replace(/[^0-9]/g, '');
+                  return digitsCount.length >= 12;
+                },
+                i18next.t('required'),
+              )
               .min(16, i18next.t('field_too_short', { cnt: 19 - 7 })),
 
             defaultMessage: i18next.t('phone'),

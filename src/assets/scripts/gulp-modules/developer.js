@@ -54,10 +54,10 @@ const options = {
   threshold: 0.1,
 };
 
-maps.forEach(image => {
+maps.forEach((image) => {
   const callback = (entries, observer) => {
     /* Content excerpted, show below */
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const lazyImage = entry.target;
         lazyImage.src = lazyImage.dataset.src;
@@ -94,8 +94,8 @@ function initMap() {
     language: 'en',
     styles: getMapTheme(),
   });
-  const filterMarkers = function(category, categoriesArray) {
-    gmarkers1.forEach(el => {
+  const filterMarkers = function (category, categoriesArray) {
+    gmarkers1.forEach((el) => {
       if (categoriesArray.has(el.category) || categoriesArray.size === 1) {
         el.setMap(map);
         el.setAnimation(google.maps.Animation.DROP);
@@ -104,8 +104,8 @@ function initMap() {
       }
     });
   };
-  filterItems.forEach(item => {
-    item.addEventListener('click', evt => {
+  filterItems.forEach((item) => {
+    item.addEventListener('click', (evt) => {
       evt.stopImmediatePropagation();
       item.classList.toggle('active');
       if (item.classList.contains('active')) {
@@ -170,7 +170,7 @@ function initMap() {
     content: '',
     maxWidth: 200,
   });
-  markersData.forEach(marker => {
+  markersData.forEach((marker) => {
     const category = marker.type;
     const mapMarker = new google.maps.Marker({
       map,
@@ -180,7 +180,7 @@ function initMap() {
       position: new google.maps.LatLng(marker.position.lat, marker.position.lng),
     });
 
-    google.maps.event.addListener(mapMarker, 'click', function() {
+    google.maps.event.addListener(mapMarker, 'click', function () {
       infowindow.setContent(marker.content);
       infowindow.open(map, mapMarker);
       map.panTo(this.getPosition());
@@ -422,7 +422,8 @@ if (ratings.length > 0) {
 
 // Основная функция
 function initRatings() {
-  let ratingActive, ratingValue;
+  let ratingActive; let
+    ratingValue;
   // "Бегаем" по всем рейтингам на странице
   for (let index = 0; index < ratings.length; index++) {
     const rating = ratings[index];
@@ -437,6 +438,7 @@ function initRatings() {
   function initRatingVars(rating) {
     ratingActive = rating.querySelector('.rating__active');
     ratingValue = rating.querySelector('.rating__value');
+  }
   // Изменяем ширину активных звезд
   function setRatingActiveWidth(index = ratingValue.innerHTML) {
     const ratingActiveWidth = index / 0.05;
