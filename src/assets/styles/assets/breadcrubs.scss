@@ -26,6 +26,7 @@
   // }
   &-item {
     // margin-right: 15px;
+    cursor: pointer;
     &__current::after {
       display: initial;
       margin: 0;

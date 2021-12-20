@@ -1,7 +1,8 @@
-.building-popup(data-build-popup-container)
+.building-popup(style="display: none;" data-build-popup-container)
       .building-popup__container
         .building-popup__close(data-close-build-popup)
-          +svg('close')
+          .green-hover
+            +svg('close')
         .building-sticker
           h5 
             span(data-build-date) 18 &nbsp;

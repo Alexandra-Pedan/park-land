@@ -1,30 +1,10 @@
-// $(window).resize(() => {
-//   window.locoScroll.update();
-//   document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-// });
-// document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-// const header = document.querySelector('.header-js');
-// console.log(header);
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('.js-sideform-call').style.display = '';
+  document.querySelector('.js-form-gratitude').style.display = '';
+  document.querySelector('.js-call-mobile').style.display = '';
+  document.querySelector('.building-popup').style.display = '';
+});
 
-// function handleVisibilityOnScroll(elems = [], direction = 'up') {
-//   elems.forEach(elem => {
-//     switch (direction) {
-//       case 'down':
-//         elem[0].classList.add(elem[1]);
-//         break;
-//       default:
-//         elem[0].classList.remove(elem[1]);
-//         break;
-//     }
-//   });
-// }
-// locoScroll.on('scroll', position => {
-//   if (position.scroll.y > 50) {
-//     handleVisibilityOnScroll([[header, 'not-on-top']], 'down');
-//   } else {
-//     handleVisibilityOnScroll([[header, 'not-on-top']]);
-//   }
-// });
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
 });
@@ -106,3 +86,20 @@ function initHeader() {
     menuClose.click();
   });
 }
+
+const placeholderForm = document.querySelector('.js-placeholder-form');
+const inputForm = document.querySelector('.js-input-form');
+
+placeholderForm.addEventListener('click', () => {
+  placeholderForm.style.display = 'none';
+});
+inputForm.addEventListener('focus', ({ target }) => {
+  // console.log(target.value);
+  placeholderForm.style.display = 'none';
+});
+inputForm.addEventListener('blur', ({ target }) => {
+  // console.log(target.value);
+  if (target.value.match(/\d/g) === null) {
+    placeholderForm.style.display = '';
+  }
+});

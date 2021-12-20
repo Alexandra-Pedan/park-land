@@ -56,10 +56,13 @@
   .form-close {
     width: 65px;
     height: 65px;
-    background: #464646;
+    // background: #464646;
     border-radius: 50%;
     position: relative;
     cursor: pointer;
+    overflow: hidden;
+    background: transparent;
+    display: inline-block;
     @include to(992px) {
       width: 45px;
       height: 45px;
@@ -75,6 +78,26 @@
         width: 8px;
         height: 8px;
       }
+    }
+    &::before {
+      content: '';
+      background: #464646;
+      width: 100%;
+      height: 0;
+      padding-bottom: 100%;
+      border-radius: 50%;
+      transform: translate3d(0, 0, 0);
+      transition: transform 0.3s;
+      transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &:hover {
+      background-color: #679836;
+    }
+    &:hover::before {
+      transform: translate3d(0, 100%, 0);
     }
   }
 }
@@ -97,7 +120,8 @@
   .form-field {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    // align-items: center;
+    align-items: flex-start;
     margin-top: 40px;
     @include to(1440px) {
       margin-top: 30px;
@@ -121,7 +145,7 @@
     padding-left: 40px;
     border-bottom: 15px;
     @include to(1440px) {
-      height: 57px;
+      height: 60px;
       margin-top: 10px;
       padding-left: 30px;
       font-size: 19px;
@@ -153,6 +177,7 @@
 
 .form-field-confirm {
   width: 9.8%;
+  padding-top: 12px;
   @include to(575px) {
     width: 100%;
     display: flex;
@@ -194,8 +219,13 @@ label {
   width: 110px;
   height: 110px;
   border-radius: 50%;
-  background: $green;
+  // background: $green;
   border: none;
+  overflow: hidden;
+  background: #679836;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
   @include to(1440px) {
     width: 79px;
     height: 79px;
@@ -210,12 +240,39 @@ label {
   }
 
   svg {
-    width: 26px;
-    height: 24px;
-    @include to(992px) {
-      width: 14px;
-      height: 13px;
+    width: 25px;
+    height: 26px;
+    stroke: #f0f0f0;
+    stroke-width: 11px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include to(1440px) {
+      width: 18px;
+      height: 17px;
     }
+    @include to(992px) {
+      width: 13px;
+      height: 12px;
+    }
+  }
+  &::before {
+    content: '';
+    background: $green;
+    width: 100%;
+    height: 0;
+    padding-bottom: 105%;
+    border-radius: 50%;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.3s;
+    transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &:hover::before {
+    transform: translate3d(0, 100%, 0);
   }
 }
 .form-gratitude {
@@ -268,6 +325,40 @@ label {
 }
 [data-btn-submit-text] {
   display: none;
+}
+
+.placeholder-form {
+  background: white;
+  display: block;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  cursor: text;
+  height: 80px;
+  padding-left: 40px;
+  border-radius: 5px;
+  font-size: 24px;
+  line-height: 130%;
+  color: #2d2d2d;
+  @include to(1440px) {
+    height: 60px;
+    padding-left: 30px;
+    font-size: 19px;
+    top: 34px;
+  }
+  @include to(992px) {
+    height: 50px;
+    font-size: 14px;
+    // top: 39px;
+  }
+  @include to(575px) {
+    height: 55px;
+    font-size: 16px;
+    // top: 41px;
+  }
 }
 // .form-header-call {
 //   background: rgba(0, 0, 0, 0.7);

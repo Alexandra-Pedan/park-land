@@ -218,8 +218,8 @@
   color: #ffffff;
   overflow: hidden;
   // background: $black;
-  background: transparent;
-  // background: #679836;
+  // background: transparent;
+  background: #679836;
   position: relative;
   display: inline-block;
   display: flex;
@@ -255,9 +255,9 @@
       display: none;
     }
   }
-  &:hover {
-    background-color: $black;
-  }
+  // &:hover {
+  //   background-color: $black;
+  // }
   &::before {
     content: '';
     background: $green;
@@ -403,6 +403,7 @@
   background: rgba(0, 0, 0, 0.5);
   width: 100vw;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   z-index: 190;
   position: fixed;
   top: 0;

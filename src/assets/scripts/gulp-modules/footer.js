@@ -11,6 +11,23 @@ if (buttonUp) {
     window.locoScroll.scrollTo(0);
   });
 }
+
+const placeholderFooter = document.querySelector('.js-placeholder-footer');
+const inputFooter = document.querySelector('.js-input-footer');
+
+placeholderFooter.addEventListener('click', () => {
+  placeholderFooter.style.display = 'none';
+});
+inputFooter.addEventListener('focus', ({ target }) => {
+  // console.log(target.value);
+  placeholderFooter.style.display = 'none';
+});
+inputFooter.addEventListener('blur', ({ target }) => {
+  // console.log(target.value);
+  if (target.value.match(/\d/g) === null) {
+    placeholderFooter.style.display = '';
+  }
+});
 // console.log(buttonUp);
 
 // // form

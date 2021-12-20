@@ -16,9 +16,15 @@
     margin: 0;
     position: relative;
     z-index: 5;
+    pointer-events: none;
+    .breadcrumbs-item {
+      pointer-events: painted;
+      cursor: pointer;
+    }
   }
   .documents-content {
     z-index: 5;
+    pointer-events: none;
   }
 }
 
@@ -76,7 +82,7 @@
     border: 2px solid #ffffff;
     border-radius: 100px;
     // background: inherit !important;
-    background-image: url(../images/panorama/kenneth-hargrave-GjsWjLCIh5I-unsplash.jpg);
+    background-image: url(../images/panorama/view-south-thumb.jpg);
     background-repeat: no-repeat;
     background-color: #a96b6b00;
     background-size: auto 100%;

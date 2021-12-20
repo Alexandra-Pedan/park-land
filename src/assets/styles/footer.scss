@@ -424,7 +424,7 @@ footer {
     right: vw(20, 360);
   }
 
-  @include to(368px) {
+  @include to(347px) {
     top: -785px;
   }
   .green-hover {
@@ -569,5 +569,42 @@ footer {
       width: 46px;
       height: 50px;
     }
+  }
+}
+
+.form-field-input {
+  position: relative;
+}
+.placeholder-footer {
+  background: white;
+  display: block;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  cursor: text;
+  height: 80px;
+  padding-left: 40px;
+  border-radius: 5px;
+  font-size: 24px;
+  line-height: 130%;
+  color: #2d2d2d;
+  @include to(1440px) {
+    height: 60px;
+    padding-left: 30px;
+    font-size: 19px;
+    top: 22px;
+  }
+  @include to(992px) {
+    height: 50px;
+    font-size: 14px;
+    // top: 39px;
+  }
+  @include to(575px) {
+    height: 55px;
+    font-size: 16px;
+    // top: 41px;
   }
 }

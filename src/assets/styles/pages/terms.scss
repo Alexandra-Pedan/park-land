@@ -18,6 +18,11 @@
     @include to(575px) {
       padding: 24px 20px;
     }
+    &:hover {
+      .accordion-arrow {
+        background: #2d2d2d;
+      }
+    }
     .accordion-arrow {
       width: 65px;
       height: 65px;

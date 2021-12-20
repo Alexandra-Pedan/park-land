@@ -422,8 +422,8 @@ if (ratings.length > 0) {
 
 // Основная функция
 function initRatings() {
-  let ratingActive; let
-    ratingValue;
+  let ratingActive;
+  let ratingValue;
   // "Бегаем" по всем рейтингам на странице
   for (let index = 0; index < ratings.length; index++) {
     const rating = ratings[index];
