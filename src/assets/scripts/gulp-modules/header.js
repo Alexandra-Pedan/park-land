@@ -1,3 +1,11 @@
+window.onload = function () {
+  document.body.classList.add('loaded_hiding');
+  window.setTimeout(() => {
+    document.body.classList.add('loaded');
+    document.body.classList.remove('loaded_hiding');
+  }, 1500);
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.js-sideform-call').style.display = '';
   document.querySelector('.js-form-gratitude').style.display = '';
@@ -103,3 +111,33 @@ inputForm.addEventListener('blur', ({ target }) => {
     placeholderForm.style.display = '';
   }
 });
+
+//
+// function menuOpen(menu) {
+//   const menuEl = menu;
+//   menuEl.style.visibility = 'visible';
+//   menuEl.classList.add('menu__active');
+//   const createAnimation = (links, translateY = 0, delay = 0) => {
+//     links.forEach((link, i) => {
+//       // eslint-disable-next-line no-undef
+//       gsap.from(link, {
+//         delay: delay + i / 25,
+//         y: translateY,
+//         skewX: 15,
+//         opacity: 0,
+//       });
+//     });
+//   };
+// }
+// const links1 = menu.querySelectorAll('[data-animation1]');
+// // const links2 = menu.querySelectorAll('[data-animation2]');
+// // const links3 = menu.querySelectorAll('[data-animation3]');
+// createAnimation(links1, 70, 0.05);
+// // createAnimation(links2, 70, 0.15);
+// // createAnimation(links3, 70, 0.25);
+
+// function menuInit() {
+//   const menu = document.querySelector('[data-menu]');
+//   menuOpen.addEventListener('click', () => menuOpen(menu));
+//   // document.querySelector('[data-close-menu]').addEventListener('click', () => menuClose(menu));
+// }

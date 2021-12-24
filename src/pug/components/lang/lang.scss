@@ -18,7 +18,7 @@
   color: #435055;
   position: relative;
   overflow: hidden;
-  transition: all 0.4s ease;
+  transition: height 0.4s ease, margin-top 0.4s ease;
   cursor: pointer;
   @include to(1440px) {
     margin-right: 45px;
@@ -53,9 +53,17 @@
     &:last-child {
       margin-bottom: 0;
     }
+    &:hover {
+      @include from(992px) {
+        a {
+          color: $green;
+        }
+      }
+    }
     a {
       text-decoration: none;
       color: #435055;
+      transition: color 0.3s ease;
     }
   }
   &:hover {

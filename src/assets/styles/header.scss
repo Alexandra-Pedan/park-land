@@ -46,7 +46,7 @@
 .logo__img {
   width: var(--logo-w);
   height: var(--logo-h);
-  transition: $transition-fuction;
+  // transition: $transition-fuction;
   cursor: pointer;
   @include to(575px) {
     display: none;
@@ -67,7 +67,7 @@
 .nav__tel-link {
   text-decoration: none;
   color: $black;
-  transition: $transition-fuction;
+  // transition: $transition-fuction;
   margin-right: 70px;
   font-size: 20px;
   line-height: 140%;
@@ -139,6 +139,7 @@
   letter-spacing: 0.01em;
   text-transform: uppercase;
   color: #435055;
+  padding: 0;
   border: none;
   background: none;
   position: relative;
@@ -202,7 +203,8 @@
 // }
 .realty__link {
   cursor: pointer;
-  transition: $transition-fuction;
+  // transition: $transition-fuction;
+  transition: transform 0.2s ease-in-out;
   // padding: 21px 59px;
   width: 290px;
   height: 65px;

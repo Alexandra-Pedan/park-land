@@ -35,8 +35,8 @@ block content
   section.documents-content.infrastructure-content
     .documents-sticker
       h5 Infrastructure
-    h1.documents-title Iнфраструктура
-    .infrastructure__title
+    h1.documents-title(data-span-entry1) Iнфраструктура
+    .infrastructure__title(data-span-entry1)
       h2 Сучасне житло – це не тільки квартира чи будинок, а і те, що знаходиться навколо
   .map.map-infrastructure(width="500" height="500px")
     #map(width="500" height="500px")
@@ -89,7 +89,7 @@ block content
         .infrastructure__cart-text
           p В ЖК PARK LAND запроектовано великий внутрішній ДВІР-ПАРК. Його площа становить близько 2 га. У внутрішньому дворі облаштуємо локації для ігор та відпочинку для різних вікових категорій мешканців
         .infrastructure__cart-img 
-          img(src="./assets/images/infrastructure1.jpg", alt="")
+          img(data-paralax src="./assets/images/infrastructure1.jpg", alt="")
     .infrastructure__cart
       .infrastructure__cart-title 
         h4 спорт-зони
@@ -97,7 +97,7 @@ block content
         .infrastructure__cart-text
           p Давно хотіли в спортзал, але не вистачає часу? Не проблема – у вас буде свій спортивний майданчик з тренажерами. Адже що може бути краще, ніж спорт на свіжому повітрі?
         .infrastructure__cart-img 
-          img(src="./assets/images/infrastructure2.jpg", alt="")
+          img(data-paralax src="./assets/images/infrastructure2.jpg", alt="")
     .infrastructure__cart
       .infrastructure__cart-title 
         h4 МІСЦЕ ДЛЯ ВІДПОЧИНКУ
@@ -105,7 +105,7 @@ block content
         .infrastructure__cart-text
           p Ми хочемо, щоб відпочити могли не тільки дітки, а і батьки, тому продумали і зони відпочинку для дорослих. Ви зможете провести час із рідними, близькими, і насолодитися атмосферою міні-пікніків не шукаючи вільного простору десь за містом
         .infrastructure__cart-img 
-          img(src="./assets/images/infrastructure3.jpg", alt="")
+          img(data-paralax src="./assets/images/infrastructure3.jpg", alt="")
     .infrastructure__cart.infrastructure__cart--video
       .infrastructure__cart-title 
         h4 ДИТЯЧІ МАЙДАНЧИКИ
@@ -143,7 +143,7 @@ block content
           p Паркінг є однією із ключових ознак класу житлового комплексу та турботи про своїх мешканців. Безпека наших мешканців –  в пріоритеті.
           p Тому в ЖК Park Land ми максимально продумали паркінги з відеонаглядом, де можна спокійно залишати машини. Ми обрали максимально зручну для мешканців модель: просторий прибудинковий паркінг або власний гараж
         .infrastructure__cart-img 
-          img(src="./assets/images/infrastructure4.jpg", alt="")
+          img(data-paralax src="./assets/images/infrastructure4.jpg", alt="")
 
 block header
   include ../includes/header.pug

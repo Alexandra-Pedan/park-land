@@ -148,8 +148,8 @@
       height: 65px;
       border-radius: 50%;
       position: relative;
-      // background: $black;
-      background: transparent;
+      background: #679836;
+      // background: transparent;
       overflow: hidden;
       @include to(1440px) {
         width: 50px;
@@ -164,11 +164,11 @@
         top: 10px;
         right: 0;
       }
-      &:hover {
-        @include from(992px) {
-          background-color: $black;
-        }
-      }
+      // &:hover {
+      //   @include from(992px) {
+      //     background-color: $black;
+      //   }
+      // }
       &::before {
         content: '';
         background: $green;

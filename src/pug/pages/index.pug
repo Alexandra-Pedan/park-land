@@ -13,21 +13,22 @@ block scripts
   script(defer src='./assets/scripts/home.js')
   script(defer src='./assets/scripts/scroll-down.js')
   script(defer src='./assets/scripts/footer.js')
+  script(defer src='./assets/scripts/animation.js')
 block arrow 
     +svg('scroll-down').js-scroll-down
 block content
   section.main-content 
     .main-content-description 
       .image
-        img(src="./assets/images/main1.jpg", alt="")
+        img(src="./assets/images/main1.jpg", alt="" data-paralax)
       .text 
         h1.title PARK LAND
         .choose-realty
           p Затишний житловий комплекс для сімей, у якому кожному буде чим зайнятись
           a(href='#').realty
             span обрати нерухомість
-    .main-content-img 
-      img(src="./assets/images/main2.jpg", alt="")
+    .main-content-img
+      img(src="./assets/images/main2.png", alt="" data-paralax)
   section.advantage-content(id="p1") 
     .advantage-sticker
       h5 advantages
@@ -35,35 +36,35 @@ block content
     ul.advantage-content-list
       li.advantage-content-item
         div
-          img(src="./assets/images/benefits1.jpg", alt="")
+          img(src="./assets/images/benefits1.jpg", alt="" data-paralax)
           p.description Закритий внутрішній парк
       li.advantage-content-item
         div
-          img(src="./assets/images/benefits2.jpg", alt="")
+          img(src="./assets/images/benefits2.jpg", alt="" data-paralax)
           p.description Панорамні вікна Salamander
       li.advantage-content-item
         div
-          img(src="./assets/images/benefits3.jpg", alt="")
+          img(src="./assets/images/benefits3.jpg", alt="" data-paralax)
           p.description Під'їзди, оздоблені під супроводом дизайнера
       li.advantage-content-item
         div
-          img(src="./assets/images/benefits4.jpg", alt="")
+          img(src="./assets/images/benefits4.jpg", alt="" data-paralax)
           p.description Міжквартирна шумоізоляція і утеплення фасаду за допомогою мінеральної вати
       li.advantage-content-item
         div
-          img(src="./assets/images/benefits5.jpg", alt="")
+          img(src="./assets/images/benefits5.jpg", alt="" data-paralax)
           p.description Продумана архітектура фасаду
       li.advantage-content-item
         div
-          img(src="./assets/images/benefits6.jpg", alt="")
+          img(src="./assets/images/benefits6.jpg", alt="" data-paralax)
           p.description Наземний паркінг та гаражі
       li.advantage-content-item
         div
-          img(src="./assets/images/benefits7.jpg", alt="")
+          img(src="./assets/images/benefits7.jpg", alt="" data-paralax)
           p.description Приміщення для зберігання дитячих візочків та окремо велосипедів
       li.advantage-content-item
         div
-          img(src="./assets/images/benefits8.jpg", alt="")
+          img(src="./assets/images/benefits8.jpg", alt="" data-paralax)
           p.description Опалення, яке включає теплу підлогу, котел, гребінку на теплу підлогу, бойлер
 
   section.about-us-content(id="p2")

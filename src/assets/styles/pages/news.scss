@@ -380,7 +380,7 @@
   &:hover {
     @include from(992px) {
       & img {
-        transform: scale(1.06);
+        transform: scale(1.02);
       }
     }
   }
@@ -469,7 +469,7 @@
   width: 15px;
   height: 16px;
   stroke: #f0f0f0;
-  stroke-width: 6px;
+  stroke-width: 11px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -504,6 +504,8 @@
     text-transform: uppercase;
     color: #2d2d2d;
     margin-right: 20px;
+    cursor: pointer;
+    transition: $transition-fuction;
     @include to(1440px) {
       width: 50px;
       height: 50px;
@@ -518,9 +520,20 @@
     @include to(575px) {
       margin-right: 10px;
     }
+    &:hover {
+      @include from(992px) {
+        border: 1px solid #79b43e;
+        background: #ffffff;
+      }
+    }
     &--current {
       background: $green;
       color: #ffffff;
+      &:hover {
+        @include from(992px) {
+          color: #2d2d2d;
+        }
+      }
     }
   }
 }

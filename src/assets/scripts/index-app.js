@@ -1,7 +1,7 @@
 import LocomotiveScroll from 'locomotive-scroll';
 import i18next from 'i18next';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// import gsap from 'gsap';
+import { gsap, ScrollTrigger } from 'gsap/all';
 import axios from 'axios';
 import * as yup from 'yup';
 import FormMonster from '../../pug/components/form/form';
@@ -14,7 +14,8 @@ import SexyInput from '../../pug/components/input/input';
 global.gsap = gsap;
 global.ScrollTrigger = ScrollTrigger;
 global.axios = axios;
-
+window.gsap = gsap;
+window.ScrollTrigger = ScrollTrigger;
 /* eslint-disable-next-line */
 const locoScroll = new LocomotiveScroll({
   el: document.querySelector('[data-scroll-container]'),
@@ -22,6 +23,7 @@ const locoScroll = new LocomotiveScroll({
   smoothMobile: false,
   inertia: 1.1,
 });
+global.locoScroll = locoScroll;
 window.locoScroll = locoScroll;
 window.locoScroll.update();
 // disableScroll();
@@ -379,4 +381,99 @@ blockForUpdatingLocoScroll.forEach((image) => {
   });
   const target = image;
   observer.observe(target);
+});
+
+gsap.registerPlugin(ScrollTrigger);
+/* eslint-disable no-undef */
+
+if (!window.location.pathname.match(/infrastructure|developer/)) {
+  locoScroll.on('scroll', ScrollTrigger.update);
+  ScrollTrigger.scrollerProxy(document.body, {
+    scrollTop(value) {
+      return arguments.length
+        ? locoScroll.scrollTo(value, 0, 0)
+        : locoScroll.scroll.instance.scroll.y;
+    }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+    },
+    pinType: document.querySelector('.page__inner').style.transform ? 'transform' : 'fixed',
+    // pinType: document.body.style.transform ? 'transform' : 'fixed',
+  });
+  ScrollTrigger.addEventListener('refresh', () => locoScroll.update());
+
+  // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+  ScrollTrigger.refresh();
+}
+
+const paralaxImages = document.querySelectorAll('[data-paralax]');
+paralaxImages.forEach((image) => {
+  const wrap = document.createElement('div');
+  wrap.style.overflow = 'hidden';
+  wrap.style.height = '100%';
+  image.parentElement.prepend(wrap);
+  gsap.set(image, { willChange: 'transform', scale: 1.1 });
+  wrap.prepend(image);
+
+  gsap
+    .timeline({
+      ease: 'none',
+      scrollTrigger: {
+        trigger: wrap,
+        scrub: 0.5,
+        onLeave: () => {
+          console.log('leave');
+        },
+        // markers: true,
+      },
+    })
+    .fromTo(
+      image,
+      {
+        y: -35,
+      },
+      {
+        y: 35,
+        ease: 'linear',
+      },
+    );
+});
+
+const spanBezier1 = 'power4.ease';
+// const spanBezier1 = 'power1.inOut';
+const spanEntries1 = document.querySelectorAll('[data-span-entry1]');
+spanEntries1.forEach((section, index) => {
+  gsap.set(section, { overflow: 'hidden' });
+  section.innerHTML = `
+    <div>
+      ${section.innerHTML}
+    </div>
+  `;
+  const tl = gsap.timeline({
+    paused: true,
+    scrollTrigger: {
+      triggerHook: 1,
+      trigger: section,
+      // start: 'top top',
+      // start: '0% bottom',
+      // end: '100% bottom',
+      onEnter: () => {
+        if (index === 0) console.log('enter');
+      },
+      once: true,
+      // scrub: 1,
+    },
+  });
+  tl.fromTo(
+    section.querySelector('div'),
+    { y: '50%', autoAlpha: 0 },
+    {
+      y: 0, autoAlpha: 1, duration: 1, ease: spanBezier1,
+    },
+  );
 });

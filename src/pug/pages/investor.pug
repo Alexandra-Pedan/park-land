@@ -25,19 +25,19 @@ block scripts
   script(defer src='./assets/scripts/scroll-down.js')
   script(defer src='./assets/scripts/footer.js')
 block arrow 
-  +svg('scroll-down').js-scroll-down                          
+  +svg('scroll-down').js-scroll-down
 block content
   include ../includes/breadcrumbs.pug
   section.documents-content
     .documents-sticker
       h5 Commercial 
-    h1.documents-title для інвестора 
+    h1.documents-title(data-span-entry1) для інвестора 
     .post-service
-      .post-service__title
+      .post-service__title(data-span-entry1)
         h3 Чому варто інвестувати саме в нерухомість PARK LAND:
       .post-service__content
         .post-service__img
-          img(src="./assets/images/investor.jpg", alt="")
+          img(data-paralax src="./assets/images/investor.jpg", alt="")
         ul.post-service__list
           li.post-service__item.investor__item
             .post-service__item--number 1
